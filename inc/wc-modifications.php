@@ -8,7 +8,7 @@
  * @package Fancy Lab
  */
 
-function ancommerce_wc_modify(){
+function ancommerce_wc_modify() {
 	//**************** CONTAINER AND ROW ******************/
 
 	/**
@@ -16,9 +16,20 @@ function ancommerce_wc_modify(){
 	* We need Bootstrap-like opening/closing HTML tags
 	*/
 	add_action( 'woocommerce_before_main_content', 'ancommerce_open_container_row', 5 );
-	function ancommerce_open_container_row(){
+	function ancommerce_open_container_row() {
 		?>
-			<div class="container shop-content"><div class="row">
+		<div class="jumbotron jumbotron-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <h1 class="h1">
+                            <?php if(is_shop()) { echo __('Store', 'ancommerce'); } else { echo the_title(); } ?>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container shop-content"><div class="row">
 		<?php
 	}
 
@@ -29,7 +40,12 @@ function ancommerce_wc_modify(){
 		<?php
 	}
 
-	if( is_shop() ){
+    add_filter( 'woocommerce_show_page_title', 'ancommerce_remove_shop_title');
+	function ancommerce_remove_shop_title() {
+ 	    return false;
+    }
+
+	if( is_shop() or is_archive() ) {
 
 		//**************** SIDEBAR ******************/
 
@@ -51,7 +67,6 @@ function ancommerce_wc_modify(){
 		}
 		// Also, if we are on a shop page, include the product description
 		add_action( 'woocommerce_after_shop_loop_item_title', 'the_excerpt', 1 );
-
 	}
 
 	/**
@@ -77,12 +92,21 @@ function ancommerce_wc_modify(){
 		}
 	}
 
+	add_action('woocommerce_before_shop_loop_item', 'ancommerce_add_cardbox_open');
+    function ancommerce_add_cardbox_open() {
+        echo '<div class="card"><div class="card-body">';
+    }
+
+    add_action('woocommerce_after_shop_loop_item', 'ancommerce_add_cardbox_close');
+    function ancommerce_add_cardbox_close() {
+        echo '</div></div>';
+    }
+
 	add_action( 'woocommerce_after_main_content', 'ancommerce_close_shop_tags', 4 );
 	function ancommerce_close_shop_tags(){
 		?>
 			</div>
 		<?php
 	}
-
 }
 add_action( 'wp', 'ancommerce_wc_modify' );

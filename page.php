@@ -14,8 +14,17 @@
 
 get_header();
 ?>
-<br>
-
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    <?php esc_html(the_title()); ?>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="content-area">
     <main>
         <div class="container">
@@ -26,7 +35,6 @@ get_header();
                     while( have_posts() ): the_post();
                         ?>
                         <article class="col">
-                            <h1><?php the_title(); ?></h1>
                             <div><?php the_content(); ?></div>
                         </article>
                     <?php

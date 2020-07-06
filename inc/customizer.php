@@ -2,34 +2,35 @@
 function ancommerce_customizer($wp_customize) {
     //Navbar Section
     $wp_customize->add_section(
-        'sec_navbar', array(
-            'title'			=> 'Navbar Settings',
-            'description'	=> 'Navbar Section'
+        'sec_theme_color', array(
+            'title'			=> 'Theme Color Settings',
+            'description'	=> 'Theme Color Section'
         )
     );
 
         // Field 1 - Select navbar
         $wp_customize->add_control(
-            'set_navbar', array(
-                'label'				=> 'Navbar',
-                'description'		=> 'Please, select your navbar color',
-                'section'			=> 'sec_navbar',
+            'set_theme_color', array(
+                'label'				=> 'Theme Color',
+                'description'		=> 'Please, select your theme color',
+                'section'			=> 'sec_theme_color',
                 'type'				=> 'text'
             )
         );
-            $wp_customize->add_setting( 'set_navbar', array(
+            $wp_customize->add_setting( 'set_theme_color', array(
                 'capability' => 'edit_theme_options',
                 'sanitize_callback' => 'themeslug_sanitize_select',
                 'default' => 'light',
             ) );
-            $wp_customize->add_control( 'set_navbar', array(
+            $wp_customize->add_control( 'set_theme_color', array(
                 'type' => 'select',
-                'section' => 'sec_navbar',
+                'section' => 'sec_theme_color',
                 'label' => __( 'Select the navbar color' ),
                 'description' => __( 'Select a color' ),
                 'choices' => array(
                     'light' => __( 'White' ),
                     'dark' => __( 'Dark' ),
+                    'darkorange' => __( 'Dark Orange' ),
                 ),
             ) );
 

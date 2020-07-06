@@ -9,24 +9,49 @@ if(class_exists('WooCommerce')) {
 
 // Carregando nossos scripts e folhas de estilos
 function load_scripts() {
+    /*
+     * Custom theme colors
+     */
+
+    if(get_theme_mod( 'set_theme_color') == 'darkorange') {
+        wp_enqueue_style( 'theme-darkorange', get_template_directory_uri(). '/assets/theme-darkorange.css',
+            array(), '1.0.0', 'all' );
+    }
+
+    if(get_theme_mod( 'set_theme_color') == 'dark') {
+        wp_enqueue_style( 'theme-dark', get_template_directory_uri(). '/assets/theme-dark.css',
+            array(), '1.0.0', 'all' );
+    }
+
+    if(get_theme_mod( 'set_theme_color') == 'light') {
+        wp_enqueue_style( 'theme-light', get_template_directory_uri(). '/assets/theme-light.css',
+            array(), '1.0.0', 'all' );
+    }
+
 
     wp_enqueue_style( 'style', get_template_directory_uri(). '/style.css',
         array(), '1.0.0', 'all' );
+
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri(). '/assets/vendor/bootstrap/css/bootstrap.css',
         array(), '4.5.0', 'all' );
+
     wp_enqueue_style( 'bootstrap-grid', get_template_directory_uri(). '/assets/vendor/bootstrap/css/bootstrap-grid.css',
         array(), '4.5.0', 'all' );
+
     wp_enqueue_style( 'bootstrap-reboot', get_template_directory_uri(). '/assets/vendor/bootstrap/css/bootstrap-reboot.css',
         array(), '4.5.0', 'all' );
+
     wp_enqueue_style( 'all', get_template_directory_uri(). '/assets/vendor/fontawesome-free/css/all.min.css',
         array(), '5.13.1', 'all' );
+
     wp_enqueue_style( 'simple-line-icons', get_template_directory_uri(). '/assets/vendor/simple-line-icons/css/simple-line-icons.css',
         array(), '2.4.1', 'all' );
+
     wp_enqueue_style( 'landing-page', get_template_directory_uri(). '/assets/css/landing-page.min.css',
         array(), '5.0.8', 'all' );
 
     // Google Fonts
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Seaweed+Script' );
 
     // Javascript
     wp_enqueue_script( 'bootstrap.bundle.min.js', get_template_directory_uri() . '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js',
@@ -42,8 +67,8 @@ function ancommerce_config(){
     //Navbar menu
     register_nav_menus(
         array(
-            'ancommerce_main_menu'	=> 'Main Menu',
-            'ancommerce_footer_menu'	=> 'Footer Menu'
+            'ancommerce_main_menu'	=> __('Main Menu'),
+            'ancommerce_footer_menu'	=> __('Footer Menu')
         )
     );
 
@@ -66,6 +91,8 @@ function ancommerce_config(){
             'max_columns'     => 1,
         )
     ) );
+
+    add_theme_support('title-tag');
 
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
@@ -90,8 +117,7 @@ function ancommerce_sidebars(){
             'after_widget'	=> '</div>',
             'before_title'	=> '<h4 class="widget-title">',
             'after_title'	=> '</h4>',
-        )
-    );
+        ));
 
     register_sidebar(
         array(
@@ -102,8 +128,18 @@ function ancommerce_sidebars(){
             'after_widget'	=> '</div>',
             'before_title'	=> '<h4 class="widget-title">',
             'after_title'	=> '</h4>',
-        )
-    );
+        ));
+
+    register_sidebar(
+        array(
+            'name'			=> esc_html__( 'Category Product Sidebar', 'ancommerce' ),
+            'id'			=> 'ancommerce-sidebar-product-category',
+            'description'	=> esc_html__( 'Drag and drop your WooCommerce widgets here', 'ancommerce' ),
+            'before_widget'	=> '<div id="%1$s" class="widget %2$s widget-wrapper">',
+            'after_widget'	=> '</div>',
+            'before_title'	=> '<h4 class="widget-title">',
+            'after_title'	=> '</h4>',
+        ));
 
     register_sidebar(
         array(
@@ -114,8 +150,7 @@ function ancommerce_sidebars(){
             'after_widget'	=> '</div>',
             'before_title'	=> '<h4 class="widget-title">',
             'after_title'	=> '</h4>',
-        )
-    );
+        ));
 
     register_sidebar(
         array(
@@ -126,8 +161,7 @@ function ancommerce_sidebars(){
             'after_widget'	=> '</div>',
             'before_title'	=> '<h4 class="widget-title">',
             'after_title'	=> '</h4>',
-        )
-    );
+        ));
 
     register_sidebar(
         array(
@@ -138,8 +172,7 @@ function ancommerce_sidebars(){
             'after_widget'	=> '</div>',
             'before_title'	=> '<h4 class="widget-title">',
             'after_title'	=> '</h4>',
-        )
-    );
+        ));
 }
 
 /**
@@ -163,3 +196,43 @@ function ancommerce_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'ancommerce_body_classes' );
+
+function register_shipment_arrival_order_status() {
+    register_post_status( 'wc-arrival-shipment', array(
+        'label'                     => 'Shipment Arrival',
+        'public'                    => true,
+        'show_in_admin_status_list' => true,
+        'show_in_admin_all_list'    => true,
+        'exclude_from_search'       => false,
+        'label_count'               => _n_noop( 'Shipment Arrival <span class="count">(%s)</span>', 'Shipment Arrival <span class="count">(%s)</span>' )
+    ) );
+}
+add_action( 'init', 'register_shipment_arrival_order_status' );
+function add_awaiting_shipment_to_order_statuses( $order_statuses ) {
+    $new_order_statuses = array();
+    foreach ( $order_statuses as $key => $status ) {
+        $new_order_statuses[ $key ] = $status;
+        if ( 'wc-processing' === $key ) {
+            $new_order_statuses['wc-arrival-shipment'] = 'Shipment Arrival';
+        }
+    }
+    return $new_order_statuses;
+}
+add_filter( 'wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
+
+/**
+ * Show cart contents / total Ajax
+ */
+add_filter( 'woocommerce_add_to_cart_fragments', 'fancy_lab_woocommerce_header_add_to_cart_fragment' );
+
+function fancy_lab_woocommerce_header_add_to_cart_fragment( $fragments ) {
+    global $woocommerce;
+
+    ob_start();
+
+    ?>
+    <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+    <?php
+    $fragments['span.items'] = ob_get_clean();
+    return $fragments;
+}

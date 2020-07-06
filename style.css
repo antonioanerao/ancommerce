@@ -1,4 +1,35 @@
 /* General */
+body{
+    font-family: 'Rajdhani', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Rajdhani', sans-serif !important;
+}
+
+.woocommerce-cart h1 {
+    font-size: 35px;
+}
+.woocommerce-cart h2 {
+    font-size: 25px;
+}
+
+.woocommerce-cart th {
+    font-size: 20px;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+    display: block;
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.25em;
+    padding: 0.8em;
+}
 
 embed, iframe, object {
     max-width: 100%;
@@ -22,6 +53,7 @@ button, input, optgroup, select, textarea {
 }
 
 
+/* Navbar. Change color at /assets/theme-x.css */
 .navbar {
     position:relative;
     display:flex;
@@ -674,41 +706,9 @@ body.preview-page {
     font-weight:600
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .content-area{
     min-height: 500px;
     padding: 3rem 0;
-}
-
-/* Cart */
-.cart .cart-icon {
-    background: url('img/cart.svg');
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    vertical-align: bottom;
-}
-
-.cart .items{
-    background: #CA2424;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
 }
 
 
@@ -815,6 +815,16 @@ body.preview-page {
     max-width: 50%;
 }
 
+
+/* Product Page */
+.woocommerce .quantity .qty {
+    width: 4.5em;
+    text-align: center;
+}
+
+.woocommerce #reviews #comment {
+    height: 120px;
+}
 
 /* Shop */
 
@@ -942,9 +952,7 @@ body.preview-page {
 /* Single Product */
 .woocommerce #respond input#submit.alt,
 .woocommerce a.button.alt,
-.woocommerce button.button.alt,
-.woocommerce input.button.alt,
-.woocommerce ul.products li.product .button {
+.woocommerce input.button.alt{
     background-color: #676768;
     color: #fff;
 }
@@ -1028,19 +1036,6 @@ body.preview-page {
     content: none;
 }
 
-.woocommerce #respond input#submit,
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button{
-    background-color: #ffeb8a;
-}
-
-.woocommerce #respond input#submit:hover,
-.woocommerce a.button:hover,
-.woocommerce button.button:hover,
-.woocommerce input.button:hover{
-    background-color: #ffe252;
-}
 
 /* Cart */
 
@@ -1059,11 +1054,6 @@ body.preview-page {
 .woocommerce table.shop_table{
     border-collapse: collapse;
 }
-.woocommerce table.shop_table thead{
-    background-color: #D2335B;
-    color: #fff;
-}
-
 
 /* My Account */
 .woocommerce-MyAccount-navigation a{

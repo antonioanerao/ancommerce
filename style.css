@@ -803,9 +803,6 @@ body.preview-page {
     margin-top: 10px;
 }
 
-
-
-
 /* WooCommerce */
 
 /* Grid System */
@@ -813,6 +810,8 @@ body.preview-page {
 .woocommerce .col2-set .col-2{
     flex: 0 0 50%;
     max-width: 50%;
+    border-color: #EEEEEE;
+    border-style: solid;
 }
 
 
@@ -1088,11 +1087,22 @@ body.preview-page {
     font-size: inherit;
 }
 
+
+.woocommerce .woocommerce-MyAccount-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.woocommerce .woocommerce-Address-title.title h3 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
 /* Store Notice */
 .woocommerce-store-notice, p.demo_store {
     background-color: #750000;
 }
-
 
 /* Content Adjustments */
 

@@ -29,23 +29,28 @@ get_header();
     <main>
         <div class="container">
             <div class="row">
-                <?php if(is_wc_endpoint_url('order-received')): echo '<div class="card"><div class="card-body">'; endif;?>
-                <?php
-                if( have_posts() ):
-                    while( have_posts() ): the_post();
-                        ?>
-                        <article class="col">
-                            <div><?php the_content(); ?></div>
-                        </article>
+                <div class="col-12">
                     <?php
-                    endwhile;
-                else:
+                        if(is_wc_endpoint_url('order-received')):
+                            echo '<div class="card"><div class="card-body">';
+                        endif;?>
+                    <?php
+                    if( have_posts() ):
+                        while( have_posts() ): the_post();
+                            ?>
+                            <article class="col">
+                                <div><?php the_content(); ?></div>
+                            </article>
+                        <?php
+                        endwhile;
+                    else:
+                        ?>
+                        <p>Nothing to display.</p>
+                    <?php
+                    endif;
                     ?>
-                    <p>Nothing to display.</p>
-                <?php
-                endif;
-                ?>
-                <?php if(is_wc_endpoint_url('order-received')): echo '</div></div>'; endif;?>
+                    <?php if(is_wc_endpoint_url('order-received')): echo '</div></div>'; endif;?>
+                </div>
             </div>
         </div>
     </main>

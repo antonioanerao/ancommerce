@@ -223,9 +223,9 @@ add_filter( 'wc_order_statuses', 'add_awaiting_shipment_to_order_statuses' );
 /**
  * Show cart contents / total Ajax
  */
-add_filter( 'woocommerce_add_to_cart_fragments', 'fancy_lab_woocommerce_header_add_to_cart_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'ancommerce_woocommerce_header_add_to_cart_fragment' );
 
-function fancy_lab_woocommerce_header_add_to_cart_fragment( $fragments ) {
+function ancommerce_woocommerce_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
 
     ob_start();
@@ -236,3 +236,33 @@ function fancy_lab_woocommerce_header_add_to_cart_fragment( $fragments ) {
     $fragments['span.items'] = ob_get_clean();
     return $fragments;
 }
+
+/*
+* Add password field in checkout page
+*/
+add_filter( 'woocommerce_checkout_fields' , 'ancommerce_custom_wc_checkout_fields' );
+function ancommerce_custom_wc_checkout_fields( $fields ) {
+    $fields['account']['account_password']['placeholder'] = __('Password', 'ancommerce');
+    $fields['account']['account_password']['label'] = __('Password', 'ancommerce');
+    $fields['account']['account_password']['required'] = 'required';
+
+    $fields['account']['account_confirm_password']['placeholder'] = __('Confirm Password', 'ancommerce');
+    $fields['account']['account_confirm_password']['label'] = __('Confirm Password', 'ancommerce');
+    $fields['account']['account_confirm_password']['required'] = 'required';
+
+    return $fields;
+}
+
+/**
+ * Validate that the two password fields match.
+ * @param $posted
+ */
+function o_woocommerce_confirm_password_validation( $posted ) {
+    $checkout = WC()->checkout;
+    if ( ! is_user_logged_in() && ( $checkout->must_create_account || ! empty( $posted['createaccount'] ) ) ) {
+        if ( strcmp( $posted['account_password'], $posted['account_confirm_password'] ) !== 0 ) {
+            wc_add_notice( __( 'Passwords do not match.', 'ancommerce' ), 'error' );
+        }
+    }
+}
+add_action( 'woocommerce_after_checkout_validation', 'o_woocommerce_confirm_password_validation', 10, 2 );

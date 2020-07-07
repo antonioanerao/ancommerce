@@ -146,6 +146,13 @@
     font-weight: 600;
 }
 
+/* Product Page */
+
+.theme-dark .star-rating,
+.woocommerce p.stars a {
+    color: #343740;
+}
+
 /* Custom Navbar */
 
 .navbar.bg-#343a40 {

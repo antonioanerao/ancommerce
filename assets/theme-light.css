@@ -139,7 +139,8 @@
 
 /* Product Page */
 
-.theme-light .star-rating {
+.theme-light .star-rating,
+.woocommerce p.stars a {
     color: #005aff;
 }
 

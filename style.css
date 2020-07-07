@@ -78,6 +78,9 @@ button, input, optgroup, select, textarea {
     line-height:inherit;
     white-space:nowrap
 }
+.custom-logo-link {
+    margin-right: 5px;
+}
 .navbar-brand:hover,
 .navbar-brand:focus {
     text-decoration:none
@@ -1039,7 +1042,7 @@ body.preview-page {
 /* Cart */
 
 .woocommerce-cart table.cart td.actions .coupon .input-text{
-    width: 160px;
+    width: 50%;
 }
 
 

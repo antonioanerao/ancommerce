@@ -14,6 +14,7 @@
 
 <nav class="navbar navbar-expand-lg sb-navbar <?php echo $themeNavbar; ?> ">
     <div class="container">
+
         <a class="navbar-brand" href="/">
             <?php if( has_custom_logo() ): ?>
                 <?php the_custom_logo(); ?>
@@ -41,7 +42,7 @@
         ?>
 
         <?php if( class_exists( 'WooCommerce' ) ): ?>
-            <div class="cart-header .d-none .d-sm-block">
+            <div class="cart-header d-block mx-auto mx-md-0 mx-sm-0">
                 <a href="<?php echo wc_get_cart_url(); ?>">
                     <span class="fa fa-shopping-cart"></span> <?php _e('My Cart', 'ancommerce') ?>
                 </a>

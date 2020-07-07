@@ -1,4 +1,4 @@
-<div class="container mb-2 mt-2">
+<div class="container mb-4 mt-4">
         <div class="row">
             <a class="navbar-brand" href="/">
                 <?php if( has_custom_logo() ): ?>

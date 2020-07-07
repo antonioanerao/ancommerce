@@ -31,6 +31,13 @@ h6 {
     padding: 0.8em;
 }
 
+.woocommerce table.shop_table th {
+    font-weight: 700;
+    padding: 5px 12px;
+    line-height: 1.5em;
+    font-size: 18px;
+}
+
 embed, iframe, object {
     max-width: 100%;
 }

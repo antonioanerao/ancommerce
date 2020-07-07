@@ -12,6 +12,182 @@ h6 {
     font-family: 'Rajdhani', sans-serif !important;
 }
 
+
+
+
+
+
+.topBar {
+    width:100%;
+    display:block;
+    min-height:36px;
+    height:36px;
+    background-color:#252525
+}
+
+.topBar .social-icons {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.list-inline {
+    padding-left: 0!important;
+    list-style: none!important;
+}
+.topBar ul li {
+    padding-right:5px;
+    padding-left:5px
+}
+.topBar ul li a {
+    padding:0 3px;
+    display:block;
+    line-height:35px;
+    font-size:14px;
+    transition:all .3s ease-in-out;
+    color:#797979
+}
+.topBar ul li a:hover {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=$value)";
+    filter:alpha(opacity=0.8);
+    -moz-opacity:.8;
+    -khtml-opacity:.8;
+    opacity:.8
+}
+.topBar ul.float-right li {
+    padding:0;
+    float:left;
+    position:relative
+}
+.topBar ul.float-right li a {
+    font-size:14px;
+    display:inline-block;
+    text-decoration: none;
+}
+.topBar ul.float-right li a:hover {
+    font-size:14px;
+    font-weight: 500;
+    display:inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.topBar ul.float-right>li {
+    margin:0 0 0 10px
+}
+.topBar ul.float-right>li.cart-dropdown {
+    margin-left:3px
+}
+.topBar ul.float-right>li:nth-child(2)::before {
+    content:"";
+    position:absolute;
+    top:6px;
+    height:24px;
+    width:1px;
+    background:rgba(255,255,255,.2)
+}
+.display-block {
+    display:block
+}
+.display-none {
+    display:none
+}
+.top-right .account-login span small {
+    color:rgba(255,255,255,.5);
+    padding:0 10px
+}
+.top-right .account-login span a {
+    color:#d9d9d9;
+    transition:all .3s ease-in-out;
+}
+.top-right .account-login span a:hover {
+    color:rgba(255,255,255,.5)
+}
+
+.top-right .cart-topbar a,
+.cart-topbar a {
+    line-height:35px;
+    min-height:36px;
+    font-size:12px;
+    color:#fff;
+    display:block;
+}
+@media (max-width:479px) {
+    .top-right .cart-topbar a,
+    .cart-topbar a {
+        padding:0 7px
+    }
+}
+@media (min-width:480px) {
+    .top-right .cart-topbar a,
+    .cart-topbar a {
+        padding:0 10px
+    }
+}
+@media (min-width:768px) {
+    .top-right .cart-topbar a,
+    .cart-topbar a {
+        font-size:13px;
+        padding:0 19px
+    }
+}
+.top-right .cart-topbar a i,
+.cart-topbar a i {
+    font-size:14px;
+    margin-right:10px
+}
+.top-right .cart-topbar a:hover,
+.cart-topbar a:hover {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=$value)";
+    filter:alpha(opacity=1);
+    -moz-opacity:1;
+    opacity:1
+}
+.top-right .cart-topbar a:focus,
+.cart-topbar a:focus {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=$value)";
+    filter:alpha(opacity=1);
+    -moz-opacity:1;
+    opacity:1
+}
+.top-right .cart-topbar a:after,
+.cart-topbar a:after {
+    border:0;
+    display:none
+}
+.top-right .cart-topbar ul.dropdown-menu,
+.cart-topbar ul.dropdown-menu {
+    border-radius:0;
+    margin:0;
+    box-shadow:none;
+    border:0;
+    z-index:9999
+}
+@media (max-width:479px) {
+    .top-right .cart-topbar ul.dropdown-menu,
+    .cart-topbar ul.dropdown-menu {
+        width:280px
+    }
+}
+@media (min-width:480px) {
+    .top-right .cart-topbar ul.dropdown-menu,
+    .cart-topbar ul.dropdown-menu {
+        width:300px
+    }
+}
+@media (min-width:768px) {
+    .top-right .cart-topbar ul.dropdown-menu,
+    .cart-topbar ul.dropdown-menu {
+        width:auto
+    }
+}
+
+
+
+
+
+
+
+
+
 .woocommerce-cart h1 {
     font-size: 35px;
 }
@@ -36,6 +212,19 @@ h6 {
     padding: 5px 12px;
     line-height: 1.5em;
     font-size: 18px;
+}
+
+.theme-darkorange .cart-header .fa-shopping-cart,
+.theme-darkorange .cart-header a {
+    color: #757575!important;
+    font-size: 17px!important;
+    text-decoration: none!important;
+}
+
+.theme-darkorange .cart-header a:hover {
+    color: #757575!important;
+    font-weight: 500!important;
+    text-decoration: none!important;
 }
 
 embed, iframe, object {
@@ -84,9 +273,6 @@ button, input, optgroup, select, textarea {
     font-size:1.25rem;
     line-height:inherit;
     white-space:nowrap
-}
-.custom-logo-link {
-    margin-right: 5px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -1112,6 +1298,11 @@ body.preview-page {
 /* Store Notice */
 .woocommerce-store-notice, p.demo_store {
     background-color: #750000;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
 }
 
 /* Content Adjustments */

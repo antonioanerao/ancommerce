@@ -1007,9 +1007,7 @@ body.preview-page {
     flex: 0 0 50%;
     max-width: 50%;
     border-color: #EEEEEE;
-    border-style: solid;
 }
-
 
 /* Product Page */
 .woocommerce .quantity .qty {

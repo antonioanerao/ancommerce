@@ -42,31 +42,36 @@
                 </ul>
             </div>
             <div class="col-md-6 col-12">
-                <ul class="list-inline float-right top-right">
-                    <?php if ( is_user_logged_in() ) : ?>
-                        <li class="account-login">
-                            <span>
-                                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><?php esc_html_e( 'My Account', 'ancommerce' ) ?></a>
-                                <small>/</small>
-                                <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ) );?>"><?php esc_html_e( 'Logout', 'ancommerce'); ?></a>
-                            </span>
-                        </li>
-                    <?php else: ?>
-                        <li class="account-login">
-                        <span>
-                            <a class="account-link" href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><?php esc_html_e( 'Login / Register', 'ancommerce' ) ?></a>
-                        </span>
-                        </li>
-                    <?php endif; ?>
 
-                    <li class="cart-topbar">
-                        <a href="<?php echo wc_get_cart_url(); ?>"><i class="fa fa-shopping-cart"></i>
-                            <span class="items">
-                                <?php echo WC()->cart->get_cart_contents_count(); ?>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+                    <ul class="list-inline float-right top-right">
+                        <?php if ( get_option( 'users_can_register' ) ) : ?>
+                            <?php if ( is_user_logged_in() ) : ?>
+                                <li class="account-login">
+                                    <span>
+                                        <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><?php esc_html_e( 'My Account', 'ancommerce' ) ?></a>
+                                        <small>/</small>
+                                        <a href="<?php echo esc_url( wp_logout_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ) );?>"><?php esc_html_e( 'Logout', 'ancommerce'); ?></a>
+                                    </span>
+                                </li>
+                            <?php else: ?>
+                                <li class="account-login">
+                                <span>
+                                    <a class="account-link" href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><?php esc_html_e( 'Login / Register', 'ancommerce' ) ?></a>
+                                </span>
+                                </li>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
+                        <?php if (class_exists('woocommerce')) : ?>
+                            <li class="cart-topbar">
+                                <a href="<?php echo wc_get_cart_url(); ?>"><i class="fa fa-shopping-cart"></i>
+                                    <span class="items">
+                                        <?php echo WC()->cart->get_cart_contents_count(); ?>
+                                    </span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
             </div>
         </div>
     </div>

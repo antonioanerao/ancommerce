@@ -82,7 +82,7 @@
         require(get_template_directory().'/inc/header-1.php');
     }
 
-    if(get_theme_mod( 'set_theme_header') == 2) {
+    if(get_theme_mod( 'set_theme_header', 2) == 2) {
         require(get_template_directory().'/inc/header-2.php');
     }
 ?>

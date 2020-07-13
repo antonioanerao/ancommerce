@@ -1,13 +1,19 @@
 <div class="container mb-4 mt-4">
         <div class="row">
-            <a class="navbar-brand" href="/">
+            <div class="col-md-6">
                 <?php if( has_custom_logo() ): ?>
                     <?php the_custom_logo(); ?>
                 <?php else: ?>
                     <h2 class="site-title"><?php bloginfo( 'title' ); ?></h2>
                     <span class="small"><?php bloginfo( 'description' ); ?></span>
                 <?php endif; ?>
-            </a>
+            </div>
+
+            <div class="col-md-4 mx-auto">
+
+                <?php get_search_form(); ?>
+
+            </div>
         </div>
     </div>
 </div>

@@ -97,6 +97,12 @@ function ancommerce_config(){
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
+
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( 'ancommerce-blog', 800, 600, array( 'center', 'center' ) );
+    if ( ! isset( $content_width ) ) {
+        $content_width = 600;
+    }
 }
 add_action( 'after_setup_theme', 'ancommerce_config', 0 );
 

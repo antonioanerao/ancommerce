@@ -6,11 +6,11 @@
     <?php wp_head(); ?>
 </head>
 <?php
-    if(get_theme_mod( 'set_theme_color') == 'light') { $themeNavbar = "navbar-light bg-light "; $themeColor = "theme-light"; }
-    if(get_theme_mod( 'set_theme_color') == 'dark') { $themeNavbar ="navbar-dark bg-dark"; $themeColor = "theme-dark"; }
-    if(get_theme_mod( 'set_theme_color') == 'darkorange') { $themeNavbar = "navbar-dark bg-darkorange"; $themeColor = "theme-darkorange"; }
+    if(get_theme_mod( 'set_theme_color') == 'light') { $themeNavbar = "navbar-light bg-light "; }
+    if(get_theme_mod( 'set_theme_color') == 'dark') { $themeNavbar ="navbar-dark bg-dark"; }
+    if(get_theme_mod( 'set_theme_color') == 'darkorange') { $themeNavbar = "navbar-dark bg-darkorange"; }
 ?>
-<body <?php body_class($themeColor); ?>>
+<body <?php body_class('theme-color'); ?>>
 <div class="topBar">
     <div class="container">
         <div class="row">

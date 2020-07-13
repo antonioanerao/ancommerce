@@ -12,10 +12,9 @@ h6 {
     font-family: 'Rajdhani', sans-serif !important;
 }
 
-
-
-
-
+a {
+    text-decoration: none!important;
+}
 
 .topBar {
     width:100%;
@@ -180,9 +179,186 @@ h6 {
     }
 }
 
+/* Blog and Archive Pages */
+.blog article,
+.archive article{
+    margin-bottom: 3rem;
+}
 
+.blog article .title,
+.archive article .title{
+    font-weight: 600;
+}
 
+.blog article .meta,
+.archive article .meta{
+    font-weight: 700;
+    margin: 1rem 0;
+}
 
+.archive-title{
+    font-size: 2rem;
+    font-weight: 700;
+    border-bottom: 1px solid #efefef;
+    padding: 0 0 0.7rem 0;
+    margin-bottom: 1rem;
+}
+
+.archive-title span{
+    color: #b58e8e;
+    font-weight: normal;
+}
+
+.blog .post-thumbnail,
+.archive .post-thumbnail{
+    margin: 1rem 0;
+}
+
+.nav-links{
+    font-weight: 700;
+}
+
+.nav-links span,
+.nav-links a{
+    padding: 0.4rem;
+}
+
+/* ## Single post comments
+--------------------------------------------- */
+.single-post .comment-respond,
+.single-post .entry-pings,
+.single-post .entry-comments {
+    color: #444;
+    padding: 20px 45px 40px 45px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    border-left: 4px solid #444;
+}
+.single-post .entry-comments h3{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.single-post .comment-respond h3,
+.single-post .entry-pings h3{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.single-post .comment-respond {
+    padding-bottom: 5%;
+    margin: 20px 1px 20px 1px;
+    border-left: none !important;
+}
+.single-post .comment-header {
+    color: #adaeb3;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.single-post .comment-header cite a {
+    border: none;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: bold;
+}
+.single-post .comment-header .comment-meta a {
+    border: none;
+    color: #adaeb3;
+    margin-bottom: -30px;
+}
+li.comment {
+    background-color: #fff;
+    border-right: none;
+}
+.single-post .comment-content {
+    clear: both;
+    overflow: hidden;
+}
+.single-post .comment-list li {
+    font-size: 16px;
+    padding: 20px 30px 20px 50px;
+}
+.single-post .comment-list .children {
+    margin-top: 40px;
+    border: 1px solid #ccc;
+}
+.single-post .comment-list li li {
+    background-color: #f5f5f6;
+}
+.single-post .comment-list li li li {
+    background-color: #fff;
+}
+.single-post .comment-respond input[type="email"],
+.single-post .comment-respond input[type="text"],
+.single-post .comment-respond input[type="url"] {
+    width: 100%;
+}
+.single-post .comment-respond label {
+    display: block;
+    margin-right: 12px;
+}
+.single-post .entry-comments .comment-author {
+    margin-bottom: 0;
+    position: relative;
+}
+.single-post .entry-comments .comment-author img {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    left: -80px;
+    top: -5px;
+    position: absolute;
+    width: 60px;
+}
+.single-post .entry-pings .reply {
+    display: none;
+}
+.single-post .bypostauthor {
+}
+.single-post .form-allowed-tags {
+    background-color: #f5f5f5;
+    font-size: 16px;
+    padding: 24px;
+}
+.single-post .comment-reply-link{
+    cursor: pointer;
+    background-color: #444;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 4px 10px 4px;
+    text-transform: uppercase;
+    width: auto;
+}
+.single-post .comment-reply-link:hover{
+    color: #fff;
+}
+.single-post .comment-notes{
+    display:none;
+}
+.single-post .comment-meta {
+    margin-bottom: -8px;
+    font-size: large;
+}
+.single-post .reply {
+    margin-top: -20px;
+}
+.single-post .comment-list{
+    margin-top: 30px;
+    color: #444;
+    padding: 20px 45px 40px 45px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    border-left: 4px solid #ffffff;
+}
 
 
 
@@ -237,17 +413,6 @@ button, input, optgroup, select, textarea {
     border: 1px solid #e2e2e2;
     max-width: 100%;
 }
-
-.archive a {
-    font-size: 18px;
-    color: #d35758;
-}
-
-.archive a:hover {
-    color: #af4142;
-    text-decoration: none;
-}
-
 
 /* Navbar. Change color at /assets/theme-x.css */
 .navbar {
@@ -835,27 +1000,7 @@ body.preview-page {
 .responsive-toggler .nav-link.active {
     color:#dd3d31
 }
-.mailchimp {
-    background-color:#dd3d31;
-    background-size:cover;
-    background-image:url("/assets/img/overlay.svg"),linear-gradient(45deg, #dd3d31 0%, #d22f23 100%);
-    color:#fff;
-    padding:5rem 0
-}
-.mailchimp h3 {
-    font-weight:700
-}
-.mailchimp p {
-    font-size:1.1rem;
-    font-weight:600
-}
-.mailchimp #mc_embed_signup .input-group .form-control {
-    font-size:1rem
-}
-.mailchimp #mc_embed_signup .input-group-append .btn {
-    font-size:0.8rem;
-    font-weight:800
-}
+
 .bsa-cpc #_default_ {
     position:relative;
     display:flex;
@@ -1975,7 +2120,6 @@ a img.aligncenter {
     font-size: .8751em;
     margin-top: 25px;
 }
-
 
 
 .no-sidebar .sidebar-1{

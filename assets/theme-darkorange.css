@@ -1,18 +1,19 @@
 /* General */
-.theme-darkorange .cart-header .fa-shopping-cart,
-.theme-darkorange .cart-header a {
+
+.theme-color .cart-header .fa-shopping-cart,
+.theme-color .cart-header a {
     color: #eee6ee;
     font-size: 18px;
     text-decoration: none;
 }
 
-.theme-darkorange .cart-header a:hover {
+.theme-color .cart-header a:hover {
     color: #eee6ee;
     font-weight: 500;
     text-decoration: none;
 }
 
-.theme-darkorange .cart-header .items{
+.theme-color .cart-header .items{
     background: #eee6ee;
     color: #000000;
     width: 22px;
@@ -31,88 +32,88 @@
     border-radius: 0.0rem!important;
 }
 
-.theme-darkorange .btn-primary {
+.theme-color .btn-primary {
     color: #ffffff;
     background-color: darkorange;
     border-color: darkorange;
     font-weight: 500;
 }
 
-.theme-darkorange .btn-primary:hover {
+.theme-color .btn-primary:hover {
     color: #ffffff;
     background-color: #ff8200;
     border-color: darkorange;
     font-weight: 600;
 }
 
-.theme-darkorange.woocommerce ul.products li.product .button,
-.theme-darkorange.woocommerce input.button.alt,
-.theme-darkorange.woocommerce button.button.alt,
-.theme-darkorange.woocommerce-checkout button.button.alt{
+.theme-color.woocommerce ul.products li.product .button,
+.theme-color.woocommerce input.button.alt,
+.theme-color.woocommerce button.button.alt,
+.theme-color.woocommerce-checkout button.button.alt{
     color: #ffffff;
     background-color: darkorange;
     border-color: darkorange;
     font-weight: 500;
 }
 
-.theme-darkorange.woocommerce ul.products li.product .button:hover,
-.theme-darkorange.woocommerce input.button.alt:hover,
-.theme-darkorange.woocommerce button.button.alt:hover,
-.theme-darkorange.woocommerce-checkout button.button.alt:hover{
+.theme-color.woocommerce ul.products li.product .button:hover,
+.theme-color.woocommerce input.button.alt:hover,
+.theme-color.woocommerce button.button.alt:hover,
+.theme-color.woocommerce-checkout button.button.alt:hover{
     color: #ffffff;
     background-color: #ff8200;
     border-color: darkorange;
     font-weight: 600;
 }
 
-.theme-darkorange.woocommerce #respond input#submit,
-.theme-darkorange.woocommerce a.button,
-.theme-darkorange.woocommerce button.button,
-.theme-darkorange.woocommerce input.button{
+.theme-color.woocommerce #respond input#submit,
+.theme-color.woocommerce a.button,
+.theme-color.woocommerce button.button,
+.theme-color.woocommerce input.button{
     background-color: darkorange;
     color: #ffffff;
     margin: 1px;
 }
 
-.theme-darkorange.woocommerce #respond input#submit:hover,
-.theme-darkorange.woocommerce a.button:hover,
-.theme-darkorange.woocommerce button.button:hover,
-.theme-darkorange.woocommerce input.button:hover{
+.theme-color.woocommerce #respond input#submit:hover,
+.theme-color.woocommerce a.button:hover,
+.theme-color.woocommerce button.button:hover,
+.theme-color.woocommerce input.button:hover{
     background-color: #ff8200;
     color: #ffffff;
 }
 
-.theme-darkorange.woocommerce-account a.button {
+.theme-color.woocommerce-account a.button {
     background-color: darkorange;
     color: #ffffff;
     margin: 1px;
     padding: .450em 1em;
 }
 
-.theme-darkorange .woocommerce a.button:hover {
+.theme-color .woocommerce a.button:hover {
     background-color: #ff8200;
     color: #ffffff;
 }
 
-.theme-darkorange .woocommerce-orders-table th {
+.theme-color .woocommerce-orders-table th {
     background-color: #ff7800 !important;
     border: 1px solid #ff7800!important;
 }
 
-.theme-darkorange .woocommerce-MyAccount-navigation .is-active {
+.theme-color .woocommerce-MyAccount-navigation .is-active {
     font-weight: 600;
     background-color: #ff8200;
 }
 
 /* Cart Custom */
-.theme-darkorange .woocommerce table.shop_table thead th {
+.theme-color .woocommerce table.shop_table thead th {
     background-color: #ff7800;
     border: 1px solid #ff7800!important;
     color: #fff;
     size: 10px!important;
 }
-.theme-darkorange.woocommerce-cart button.button,
-.theme-darkorange.woocommerce-cart button.button:disabled, .woocommerce button.button:disabled[disabled]{
+.theme-color.woocommerce-cart button.button,
+.theme-color.woocommerce-cart button.button:disabled, .woocommerce button.button:disabled[disabled]{
     background-color: darkorange;
     color: #fff;
     font-weight: 500;
@@ -120,8 +121,8 @@
     float: left;
 }
 
-.theme-darkorange.woocommerce-cart button.button:hover,
-.theme-darkorange.woocommerce-cart button.button:disabled, .woocommerce button.button:disabled[disabled]:hover{
+.theme-color.woocommerce-cart button.button:hover,
+.theme-color.woocommerce-cart button.button:disabled, .woocommerce button.button:disabled[disabled]:hover{
     background-color: #ff7800;
     color: #fff;
     font-weight: 500;
@@ -147,7 +148,7 @@
 
 /* Product Page */
 
-.theme-darkorange .star-rating,
+.theme-color .star-rating,
 .woocommerce p.stars a {
     color: #ff7800;
 }
@@ -158,4 +159,36 @@
 
 .navbar.bg-darkorange {
     background-color: darkorange !important;
+}
+
+/* Blog - Archive */
+.blog-area a,
+.blog .widget a,
+.single .widget a,
+.single h1,
+.single a,
+.archive a {
+    color: darkorange;
+}
+
+.blog-area a:hover,
+.archive a:hover,
+.blog .widget a:hover,
+.single a:hover{
+    color: #ff7800;
+    font-weight: 600;
+}
+
+/* Comments */
+.comment-form .btn-info {
+    color: #FFFFFF;
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+.comment-form .btn-info:hover {
+    color: #FFFFFF;
+    background-color: #ff7800;
+    border-color: #ff7800;
+    font-weight: 600;
 }

@@ -31,9 +31,12 @@ get_header();
             <div class="row">
                 <div class="col-12">
                     <?php
+                        if ( class_exists( 'woocommerce' ) ) :
                         if(is_wc_endpoint_url('order-received')):
                             echo '<div class="card"><div class="card-body">';
-                        endif;?>
+                        endif;
+                        endif;
+                    ?>
                     <?php
                     if( have_posts() ):
                         while( have_posts() ): the_post();
@@ -49,7 +52,13 @@ get_header();
                     <?php
                     endif;
                     ?>
-                    <?php if(is_wc_endpoint_url('order-received')): echo '</div></div>'; endif;?>
+                    <?php
+                        if ( class_exists( 'woocommerce' ) ) :
+                            if(is_wc_endpoint_url('order-received')): echo '</div></div>';
+                            endif;
+                        endif;
+
+                    ?>
                 </div>
             </div>
         </div>

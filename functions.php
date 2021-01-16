@@ -99,7 +99,8 @@ function ancommerce_config(){
     add_theme_support( 'wc-product-gallery-slider' );
 
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'ancommerce-blog', 800, 600, array( 'center', 'center' ) );
+    add_image_size( 'ancommerce-blog', 250, 250, array( 'center', 'center' ) );
+    add_image_size( 'ancommerce-blog-single', 960, 600, array( 'center', 'center' ) );
     if ( ! isset( $content_width ) ) {
         $content_width = 600;
     }

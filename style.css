@@ -185,6 +185,10 @@ a {
     margin-bottom: 3rem;
 }
 
+.single-post .wp-post-image {
+    margin-bottom: 25px!important;
+}
+
 .blog article .title,
 .archive article .title{
     font-weight: 600;

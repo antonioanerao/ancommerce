@@ -179,6 +179,11 @@
     font-weight: 600;
 }
 
+.woocommerce a:hover{
+    color: #ff7800;
+    font-weight: 500!important;
+}
+
 /* Comments */
 .comment-form .btn-info {
     color: #FFFFFF;

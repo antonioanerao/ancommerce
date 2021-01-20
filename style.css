@@ -1953,7 +1953,16 @@ a img.aligncenter {
 
 .widget-title {
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.blog .widget-title {
+    font-size: 22px;
+    margin-bottom: 1px;
+}
+
+.blog .widget > ul {
+    margin-top: -5px;
 }
 
 .woocommerce .shop-content .widget-wrapper ul li span, .woocommerce .shop-content .widget-wrapper ul li ul li span {

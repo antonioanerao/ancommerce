@@ -77,7 +77,7 @@ function ancommerce_wc_modify() {
 
 	//**************** PRIMARY ******************/
 
-	// Modify HTML tags on a shop page. We also want Bootstrap-like markup here (.primary div)
+	// Modify HTML tags on a shop and product category page. We also want Bootstrap-like markup here (.primary div)
 	add_action( 'woocommerce_before_main_content', 'ancommerce_add_shop_tags', 9 );
 	function ancommerce_add_shop_tags(){
 		if( is_shop()){
@@ -85,7 +85,15 @@ function ancommerce_wc_modify() {
 			?>
 				<div class="col-lg-9 col-md-8 order-1 order-md-2">
 			<?php endif;
-		} else{
+		}
+
+		elseif(is_product_category()) {
+		     if(is_active_sidebar( 'ancommerce-sidebar-product-category' )) {
+		         echo '<div class="col-lg-9 col-md-8 order-1 order-md-2">';
+		     }
+		}
+
+		else{
 			?>
 				<div class="col">
 			<?php

@@ -2216,3 +2216,18 @@ a img.aligncenter {
     color: #ffffff;
     text-decoration: none;
 }
+
+section.templatehome-slide {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+section.templatehome-slide .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}

@@ -71,183 +71,90 @@ function ancommerce_customizer($wp_customize) {
         ),
     ) );
 
-    //Service section panel
-    $wp_customize->add_panel( 'panel_hmoe_template', array(
-        'priority'       => 500,
-        'capability'     => 'edit_theme_options',
-        'title'      => __('Template Home Options', 'appointment'),
-    ) );
-
-
-    //sobrenos section one
-    $wp_customize->add_section( 'sec_masthead' , array(
-        'title'      => __('Masthead', 'appointment'),
-        'panel'  => 'panel_hmoe_template',
-        'priority'   => 100,
-        'sanitize_callback' => 'sanitize_text_field',
-    ) );
-
-    $wp_customize->add_setting(
-        'appointment_options[set_masterhead_description]',
-        array(
-            'default' => __('Build a landing page for your business or project and generate more call to actions!'),
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[set_masterhead_description]',
-        array(
-            'label' => __('Description','appointment'),
-            'section' => 'sec_masthead',
-            'type' => 'textarea',
-        )
-    );
-
-    $wp_customize->add_setting(
-        'appointment_options[set_masterhead_image_url]',
-        array(
-            'default' => __('ti-bar-chart','appointment'),
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[set_masterhead_image_url]',
-        array(
-            'label' => __('Image URL','appointment'),
-            'section' => 'sec_masthead',
-            'type' => 'text',
-        )
-    );
-
-    //sobrenos section 2
-    $wp_customize->add_section( 'sobrenos_section_two' , array(
-        'title'      => __('Bloco 02', 'appointment'),
-        'panel'  => 'panel_hmoe_template',
-        'priority'   => 100,
-        'sanitize_callback' => 'sanitize_text_field',
-    ) );
-
-    $wp_customize->add_setting(
-        'appointment_options[sobrenos_two_title]',
-        array(
-            'default' => __('Focus on Customized Sales','appointment'),
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[sobrenos_two_title]',
-        array(
-            'label' => __('Título','appointment'),
-            'section' => 'sobrenos_section_two',
-            'type' => 'text',
-        )
-    );
-
-    $wp_customize->add_setting(
-        'appointment_options[sobrenos_two_description]',
-        array(
-            'default' => 'There are many variations of passa lorem Ipsum available but the ma',
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[sobrenos_two_description]',
-        array(
-            'label' => __('Descrição','appointment'),
-            'section' => 'sobrenos_section_two',
-            'type' => 'textarea',
-        )
-    );
-
-    $wp_customize->add_setting(
-        'appointment_options[sobrenos_two_icon]',
-        array(
-            'default' => __('ti-business-card','appointment'),
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[sobrenos_two_icon]',
-        array(
-            'label' => __('Ícone','appointment'),
-            'section' => 'sobrenos_section_two',
-            'type' => 'text',
-        )
-    );
-
-
-    //sobrenos section 3
-    $wp_customize->add_section( 'sobrenos_section_three' , array(
-        'title'      => __('Bloco 03', 'appointment'),
-        'panel'  => 'panel_hmoe_template',
-        'priority'   => 100,
-        'sanitize_callback' => 'sanitize_text_field',
-    ) );
-
-    $wp_customize->add_setting(
-        'appointment_options[sobrenos_three_title]',
-        array(
-            'default' => __('Focus on Customized Sales','appointment'),
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[sobrenos_three_title]',
-        array(
-            'label' => __('Título','appointment'),
-            'section' => 'sobrenos_section_three',
-            'type' => 'text',
-        )
-    );
-
-    $wp_customize->add_setting(
-        'appointment_options[sobrenos_three_description]',
-        array(
-            'default' => 'There are many variations of passa lorem Ipsum available but the ma',
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[sobrenos_three_description]',
-        array(
-            'label' => __('Descrição','appointment'),
-            'section' => 'sobrenos_section_three',
-            'type' => 'textarea',
-        )
-    );
-
-    $wp_customize->add_setting(
-        'appointment_options[sobrenos_three_icon]',
-        array(
-            'default' => __('ti-pie-chart2','appointment'),
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'appointment_sanitize_html',
-            'type' => 'option'
-        )
-    );
-    $wp_customize->add_control(
-        'appointment_options[sobrenos_three_icon]',
-        array(
-            'label' => __('Ícone','appointment'),
-            'section' => 'sobrenos_section_three',
-            'type' => 'text',
-        )
-    );
-
+    // Template Home Options
+	$wp_customize->add_panel( 'panel_home_options_settings', array(
+		'priority'       => 500,
+		'capability'     => 'edit_theme_options',
+		'title'      => __('Template Home Options', 'ancommerce'),
+	) );
+		// Masterhead
+		$wp_customize->add_section(
+			'sec_masterhead', array(
+				'title'			=> __( 'Masterhead', 'ancommerce' ),
+				'description'	=> __( 'Masterhead Section', 'ancommerce' ),
+				'panel'  => 'panel_home_options_settings',
+			)
+		);
+			// Description
+			$wp_customize->add_setting(
+				'set_masterhead_description', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_masterhead_description', array(
+					'label'				=> __( 'Description', 'ancommerce' ),
+					'description'		=> __( 'Add your description here', 'ancommerce' ),
+					'section'			=> 'sec_masterhead',
+					'type'				=> 'textarea'
+				)
+			);
+	
+			// Image URL
+			$wp_customize->add_setting(
+				'set_masterhead_image_url', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_masterhead_image_url', array(
+					'label'				=> __( 'Image URL', 'ancommerce' ),
+					'description'		=> __( 'Please, add your Image URL', 'ancommerce' ),
+					'section'			=> 'sec_masterhead',
+					'type'				=> 'text'
+				)
+			);
+			
+			// Button
+			$wp_customize->add_setting(
+				'set_masterhead_button_text', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_masterhead_button_text', array(
+					'label'				=> __( 'Button Text', 'ancommerce' ),
+					'description'		=> __( 'Add your Button Text', 'ancommerce' ),
+					'section'			=> 'sec_masterhead',
+					'type'				=> 'text'
+				)
+			);
+	
+			$wp_customize->add_setting(
+				'set_masterhead_button_link', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_masterhead_button_link', array(
+					'label'				=> __( 'Button Link', 'ancommerce' ),
+					'description'		=> __( 'Add your Button Link', 'ancommerce' ),
+					'section'			=> 'sec_masterhead',
+					'type'				=> 'text',
+					'input_attrs' => array(
+						'placeholder' => __('EX: https://domain.com'),
+					)
+				)
+			);
+			
 
     // Footer
 

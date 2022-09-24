@@ -1,44 +1,78 @@
 <?php /* Template Name: Home Page */ get_header(); ?>
 
-<div class="container">
+<!-- Masthead -->
+<?php if(get_theme_mod('set_masterhead_description')): ?>
+    <header class="masthead text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">
+                        <?php
+                            if(get_theme_mod('set_masterhead_description')) :
+                                echo esc_html( get_theme_mod( 'set_masterhead_description') );
+                            endif;
+                        ?>
+                    </h1>
+                </div>
+                <?php  if(get_theme_mod('set_masterhead_button_text')) : ?>
+                <div class="col-md-6 col-lg-6 col-sm-12 mx-auto">
+                    <?php if(get_theme_mod('set_masterhead_button_link')) : ?>
+                    <a href="<?php echo  get_theme_mod( 'set_masterhead_button_link') ; ?>">
+                    <?php endif; ?>
+                        <button type="submit" class="btn btn-block btn-lg btn-primary">
+                            <?php echo  get_theme_mod( 'set_masterhead_button_text') ; ?>
+                        </button>
+                    <?php if(get_theme_mod('set_masterhead_button_link')) : ?>
+                    </a>
+                    <?php endif; ?>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </header>
+<?php endif; ?>
+
+<div class="_container">
     <div class="row">
         <div class="col-md-12">
-            <section class="templatehome-slide bg-light text-center">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="http://127.0.0.1/wordpress/wp-content/uploads/2021/01/ps5-slide1.jpg">
-                            <div class="carousel-caption d-none d-md-block d-sm-block">
-                                <h4>Title h5</h4>
-                                <h3>bla bla bla bla bla bla bla bla</h3>
-                            </div>
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="http://127.0.0.1/wordpress/wp-content/uploads/2021/01/slide2-xbox.jpg" >
-                        </div>
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="http://127.0.0.1/wordpress/wp-content/uploads/2021/01/slide3-switch.jpg" alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </section>
+<!--            <section class="templatehome-slide bg-light text-center">-->
+<!--                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
+<!--                    <ol class="carousel-indicators">-->
+<!--                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>-->
+<!--                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
+<!--                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+<!--                    </ol>-->
+<!--                    <div class="carousel-inner">-->
+<!---->
+<!--                        <div class="carousel-item active">-->
+<!--                            <img class="d-block w-100" src="https://s2.glbimg.com/K0sRV-Vom1YHshhY3MusTGNq-ws=/e.glbimg.com/og/ed/f/original/2021/09/23/plantas-medicinais.jpeg">-->
+<!--                            <div class="carousel-caption d-none d-md-block d-sm-block">-->
+<!--                                <h4>Title h5</h4>-->
+<!--                                <h3>bla bla bla bla bla bla bla bla</h3>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!---->
+<!---->
+<!--                        <div class="carousel-item">-->
+<!--                            <img class="d-block w-100" src="http://127.0.0.1/wordpress/wp-content/uploads/2021/01/slide2-xbox.jpg" >-->
+<!--                        </div>-->
+<!---->
+<!--                        <div class="carousel-item">-->
+<!--                            <img class="d-block w-100" src="http://127.0.0.1/wordpress/wp-content/uploads/2021/01/slide3-switch.jpg" alt="Third slide">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    -->
+<!--                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
+<!--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                        <span class="sr-only">Previous</span>-->
+<!--                    </a>-->
+<!--                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">-->
+<!--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                        <span class="sr-only">Next</span>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </section>-->
 
             <!-- Image Showcases -->
             <section class="showcase">

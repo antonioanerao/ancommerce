@@ -75,7 +75,7 @@
 <!--            </section>-->
 
             <!-- Image Showcases -->
-            <section class="showcase">
+            <section class="showcase bg-light text-center">
                 <div class="container-fluid p-0">
                     
                     <?php if(get_theme_mod('set_block_01_image_url')) : ?>
@@ -91,49 +91,91 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                    
-                    <div class="row no-gutters">
-                        <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/bg-showcase-2.jpg');"></div>
-                        <div class="col-lg-6 my-auto showcase-text">
-                            <h2>Updated For Bootstrap 4</h2>
-                            <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+	
+	                <?php if(get_theme_mod('set_block_02_image_url')) : ?>
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?php echo get_theme_mod('set_block_02_image_url', get_template_directory_uri() . '/assets/img/bg-showcase-2.jpg');?>')"></div>
+                            <div class="col-lg-6 my-auto showcase-text">
+                                <h2>
+	                                <?php echo get_theme_mod('set_block_02_title', 'My cool block title 02'); ?>
+                                </h2>
+                                <p class="lead mb-0">
+	                                <?php echo get_theme_mod('set_block_02_description', 'My cool block 02 title description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quisquam unde voluptatibus? Pariatur, quis, temporibus! Ad animi aperiam aspernatur fuga odio quam repellendus. '); ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row no-gutters">
-                        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/bg-showcase-3.jpg');"></div>
-                        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                            <h2>Easy to Use &amp; Customize</h2>
-                            <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+                    <?php endif; ?>
+	
+	                <?php if(get_theme_mod('set_block_03_image_url')) : ?>
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<?php echo get_theme_mod('set_block_03_image_url', get_template_directory_uri() . '/assets/img/bg-showcase-3.jpg');?>')"></div>
+                            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                                <h2>
+					                <?php echo get_theme_mod('set_block_03_title', 'My cool block title 01'); ?>
+                                </h2>
+                                <p class="lead mb-0">
+					                <?php echo get_theme_mod('set_block_03_description', 'My cool block title description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quisquam unde voluptatibus? Pariatur, quis, temporibus! Ad animi aperiam aspernatur fuga odio quam repellendus. '); ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+	                <?php endif; ?>
                 </div>
             </section>
 
-            <!-- Testimonials -->
-            <section class="testimonials text-center bg-light">
-                <div class="container">
-                    <h2 class="mb-5">What people are saying...</h2>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                                <img class="img-fluid rounded-circle mb-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials-1.jpg" alt="">
-                                <h5>Margaret E.</h5>
-                                <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            <section class="bg-light text-center">
+                <div class="container-fluid p-0">
+                    <header class="bg-dark py-2">
+                        <div class="container px-4 px-lg-5 my-5">
+                            <div class="text-center text-white">
+                                <h1 class="display-4 fw-bolder">Last Products</h1>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                                <img class="img-fluid rounded-circle mb-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials-2.jpg" alt="">
-                                <h5>Fred S.</h5>
-                                <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                                <img class="img-fluid rounded-circle mb-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/testimonials-3.jpg" alt="">
-                                <h5>Sarah W.</h5>
-                                <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
-                            </div>
+                    </header>
+                </div>
+                    
+                    <div class="container-fluid">
+                        <div class="row mt-4 pl-3 pr-3">
+		                    <?php
+		                    $args = array(
+			                    'post_type' => 'product',
+			                    'posts_per_page' => 3,
+		                    );
+		
+		                    $loop = new WP_Query( $args );
+		
+		                    while ( $loop->have_posts() ) : $loop->the_post();
+			                    global $product;
+			                    ?>
+                                <div class="col-sm-10 col-md-8 col-lg-4 offset-sm-1 offset-md-2 offset-lg-0 mt-4 mb-4">
+                                    <div class="card">
+                                        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                             data-mdb-ripple-color="light">
+                                            <img width="100%" height="280" class="w-100"
+                                                 src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                            <div class="hover-overlay">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card-body py-3 px-3">
+                                            <h5 class="text-reset"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h5>
+                                            <p>
+                                                <?php echo get_the_excerpt(); ?>
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="card-footer">
+                                            <a href="<?php echo get_the_permalink(); ?>" class="btn btn-sm btn-info btn-icon btn-cart pull-right">
+                                                <i class="fa fa-eye"></i>
+                                                <span>See Product</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+		                    <?php
+		                    endwhile;
+		                    wp_reset_query();
+		                    ?>
                         </div>
                     </div>
                 </div>

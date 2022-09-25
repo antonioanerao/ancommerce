@@ -2217,6 +2217,7 @@ a img.aligncenter {
     text-decoration: none;
 }
 
+/* Home Template */
 section.templatehome-slide {
     position: relative;
     margin-top: 50px;
@@ -2230,4 +2231,53 @@ section.templatehome-slide .overlay {
     top: 0;
     left: 0;
     opacity: 0.3;
+}
+
+.wp-block {
+    margin: 0 0 15px 0;
+    padding:15px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    position: relative;
+    cursor: default;
+    border-radius: 2px;
+}
+
+.wp-block.product {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #e0eded;
+}
+
+.wp-block:before, .wp-block:after {
+    display: table;
+    content: "";
+}
+
+.wp-block.product figure {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0eded;
+}
+
+.wp-block.product .product-title {
+    margin: 10px 0 0 0;
+    padding: 0;
+    border-bottom: 0;
+}
+
+.wp-block.product .product-title a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.wp-block.product p {
+    color: #616161;
+}
+
+.wp-block.product .wp-block-footer {
+    border-top: 1px solid #e0eded;
+    padding-top: 15px;
+    padding-bottom:25px;
 }

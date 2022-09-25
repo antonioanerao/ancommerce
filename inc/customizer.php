@@ -150,8 +150,7 @@ function ancommerce_customizer($wp_customize) {
 					)
 				)
 			);
-	
-	
+			
 		// Block 01
 		$wp_customize->add_section(
 			'sec_block_01', array(
@@ -207,6 +206,130 @@ function ancommerce_customizer($wp_customize) {
 					'label'				=> __( 'Image URL', 'ancommerce' ),
 					'description'		=> __( 'Add your image url here', 'ancommerce' ),
 					'section'			=> 'sec_block_01',
+					'type'				=> 'text',
+					'input_attrs' => array(
+						'placeholder' => __('EX: https://domain.com/img/image.jpg'),
+					)
+				)
+			);
+
+		// Block 02
+		$wp_customize->add_section(
+			'sec_block_02', array(
+				'title'			=> __( 'Block 02', 'ancommerce' ),
+				'description'	=> __( 'Block 02 Section. You need to insert an image url to display this section', 'ancommerce' ),
+				'panel'  => 'panel_home_options_settings',
+			)
+		);
+			// Title
+			$wp_customize->add_setting(
+				'set_block_02_title', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_02_title', array(
+					'label'				=> __( 'Title', 'ancommerce' ),
+					'description'		=> __( 'Add your title here', 'ancommerce' ),
+					'section'			=> 'sec_block_02',
+					'type'				=> 'text',
+				)
+			);
+			
+			// Description
+			$wp_customize->add_setting(
+				'set_block_02_description', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_02_description', array(
+					'label'				=> __( 'Description', 'ancommerce' ),
+					'description'		=> __( 'Add your description here', 'ancommerce' ),
+					'section'			=> 'sec_block_02',
+					'type'				=> 'textarea'
+				)
+			);
+			
+			// Image URK
+			$wp_customize->add_setting(
+				'set_block_02_image_url', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_02_image_url', array(
+					'label'				=> __( 'Image URL', 'ancommerce' ),
+					'description'		=> __( 'Add your image url here', 'ancommerce' ),
+					'section'			=> 'sec_block_02',
+					'type'				=> 'text',
+					'input_attrs' => array(
+						'placeholder' => __('EX: https://domain.com/img/image.jpg'),
+					)
+				)
+			);
+	
+		// Block 03
+		$wp_customize->add_section(
+			'sec_block_03', array(
+				'title'			=> __( 'Block 03', 'ancommerce' ),
+				'description'	=> __( 'Block 03 Section. You need to insert an image url to display this section', 'ancommerce' ),
+				'panel'  => 'panel_home_options_settings',
+			)
+		);
+			// Title
+			$wp_customize->add_setting(
+				'set_block_03_title', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_03_title', array(
+					'label'				=> __( 'Title', 'ancommerce' ),
+					'description'		=> __( 'Add your title here', 'ancommerce' ),
+					'section'			=> 'sec_block_03',
+					'type'				=> 'text',
+				)
+			);
+			
+			// Description
+			$wp_customize->add_setting(
+				'set_block_03_description', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_03_description', array(
+					'label'				=> __( 'Description', 'ancommerce' ),
+					'description'		=> __( 'Add your description here', 'ancommerce' ),
+					'section'			=> 'sec_block_03',
+					'type'				=> 'textarea'
+				)
+			);
+			
+			// Image URK
+			$wp_customize->add_setting(
+				'set_block_03_image_url', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_03_image_url', array(
+					'label'				=> __( 'Image URL', 'ancommerce' ),
+					'description'		=> __( 'Add your image url here', 'ancommerce' ),
+					'section'			=> 'sec_block_03',
 					'type'				=> 'text',
 					'input_attrs' => array(
 						'placeholder' => __('EX: https://domain.com/img/image.jpg'),

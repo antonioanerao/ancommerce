@@ -77,14 +77,21 @@
             <!-- Image Showcases -->
             <section class="showcase">
                 <div class="container-fluid p-0">
-                    <div class="row no-gutters">
-
-                        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/bg-showcase-1.jpg');"></div>
-                        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                            <h2>Fully Responsive Design</h2>
-                            <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+                    
+                    <?php if(get_theme_mod('set_block_01_image_url')) : ?>
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('<?php echo get_theme_mod('set_block_01_image_url', get_template_directory_uri() . '/assets/img/bg-showcase-1.jpg');?>')"></div>
+                            <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                                <h2>
+                                    <?php echo get_theme_mod('set_block_01_title', 'My cool block title 01'); ?>
+                                </h2>
+                                <p class="lead mb-0">
+                                    <?php echo get_theme_mod('set_block_01_description', 'My cool block title description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quisquam unde voluptatibus? Pariatur, quis, temporibus! Ad animi aperiam aspernatur fuga odio quam repellendus. '); ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
+                    
                     <div class="row no-gutters">
                         <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/bg-showcase-2.jpg');"></div>
                         <div class="col-lg-6 my-auto showcase-text">

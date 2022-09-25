@@ -34,10 +34,6 @@ function ancommerce_customizer($wp_customize) {
                 ),
             ) );
 
-
-
-
-
     //Theme header Section
     $wp_customize->add_section(
         'sec_theme_header', array(
@@ -154,7 +150,71 @@ function ancommerce_customizer($wp_customize) {
 					)
 				)
 			);
+	
+	
+		// Block 01
+		$wp_customize->add_section(
+			'sec_block_01', array(
+				'title'			=> __( 'Block 01', 'ancommerce' ),
+				'description'	=> __( 'Block 01 Section. You need to insert an image url to display this section', 'ancommerce' ),
+				'panel'  => 'panel_home_options_settings',
+			)
+		);
+			// Title
+			$wp_customize->add_setting(
+				'set_block_01_title', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+					'set_block_01_title', array(
+					'label'				=> __( 'Title', 'ancommerce' ),
+					'description'		=> __( 'Add your title here', 'ancommerce' ),
+					'section'			=> 'sec_block_01',
+					'type'				=> 'text',
+				)
+			);
+	
+			// Description
+			$wp_customize->add_setting(
+				'set_block_01_description', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_01_description', array(
+					'label'				=> __( 'Description', 'ancommerce' ),
+					'description'		=> __( 'Add your description here', 'ancommerce' ),
+					'section'			=> 'sec_block_01',
+					'type'				=> 'textarea'
+				)
+			);
 			
+			// Image URK
+			$wp_customize->add_setting(
+				'set_block_01_image_url', array(
+					'type'					=> 'theme_mod',
+					'default'				=> '',
+					'sanitize_callback'		=> 'sanitize_text_field',
+				)
+			);
+			$wp_customize->add_control(
+				'set_block_01_image_url', array(
+					'label'				=> __( 'Image URL', 'ancommerce' ),
+					'description'		=> __( 'Add your image url here', 'ancommerce' ),
+					'section'			=> 'sec_block_01',
+					'type'				=> 'text',
+					'input_attrs' => array(
+						'placeholder' => __('EX: https://domain.com/img/image.jpg'),
+					)
+				)
+			);
+			
+		//TODO Add block 01 and block 02
 
     // Footer
 

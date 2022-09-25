@@ -193,7 +193,7 @@ function ancommerce_customizer($wp_customize) {
 				)
 			);
 			
-			// Image URK
+			// Image URL
 			$wp_customize->add_setting(
 				'set_block_01_image_url', array(
 					'type'					=> 'theme_mod',

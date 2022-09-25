@@ -1,5 +1,13 @@
 <?php /* Template Name: Home Page */ get_header(); ?>
 
+<style>
+    <?php if(get_theme_mod('set_masterhead_image_url')): ?>
+        header.masthead {
+            background: url('<?php echo get_theme_mod('set_masterhead_image_url'); ?>') no-repeat center center;
+        }
+    <?php endif; ?>
+</style>
+
 <!-- Masthead -->
 <?php if(get_theme_mod('set_masterhead_description')): ?>
     <header class="masthead text-white text-center">

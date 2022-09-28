@@ -329,6 +329,8 @@ object {
 #second-advertisement img {
     max-height: 100px;
     width: auto;
+    margin-top: 10px;
+    margin-bottom: -5px;
 }
 
 /*--------------------------------------------------------------
@@ -388,7 +390,7 @@ object {
 
 #fifth-posts-section article:first-child .featured-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-bottom: 15px;
 }
 
@@ -403,6 +405,7 @@ object {
 #fifth-posts-section article:first-child .entry-container {
     width: auto;
     padding: 0 5px;
+    line-height: 1.8em;
 }
 
 /*--------------------------------------------------------------

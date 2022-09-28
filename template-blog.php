@@ -40,8 +40,6 @@
 								</div><!-- .blog-post-item -->
 							</article>
 			    		<?php $count++; endwhile; endif; wp_reset_postdata(); ?>
-
-
                 </div><!-- .blog-archive -->
 			</div><!-- .container -->
 		</section>
@@ -149,7 +147,9 @@
 		<?php if( !empty( $first_advertisement_image ) && !empty( $first_advertisement_url ) ) : ?>
 			<section id="first-advertisement">
 				<div class="container">
-		            <a href="<?php echo esc_url($first_advertisement_url); ?>" target="_blank"><img src="<?php echo esc_url($first_advertisement_image); ?>" alt="<?php esc_attr_e('first-advertisement', 'mero-magazine'); ?>"></a>
+		            <a href="<?php echo esc_url($first_advertisement_url); ?>" target="_blank">
+                        <img class="img-fluid" src="<?php echo esc_url($first_advertisement_image); ?>" alt="<?php esc_attr_e('first-advertisement', 'ancommerce'); ?>">
+                    </a>
 		        </div><!-- .container -->
 	        </section><!-- #first-advertisement -->
         <?php endif; ?>

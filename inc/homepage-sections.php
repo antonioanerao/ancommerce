@@ -1,10 +1,4 @@
 <?php
-/**
- * Homepage Sections.
- *
- * @package mero_magazine
- */
-
 // Add Panel.
 $wp_customize->add_panel( 'homepage_sections',
     array(
@@ -195,10 +189,10 @@ $wp_customize->add_control('first_advertisement_section_show', array(
 // First Advertisement Image
 $wp_customize->add_setting('first_advertisement_image', array(
     'type' => 'theme_mod',
-    'sanitize_callback' => 'mero_magazine_sanitize_image',
+    'sanitize_callback' => 'sanitize_image',
 ));
 
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'mero_magazine_first_advertisement',
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'first_advertisement',
         array(
             'label' 	=> __('Image Size: 900 x 60', 'ancommerce'),
             'settings'  => 'first_advertisement_image',

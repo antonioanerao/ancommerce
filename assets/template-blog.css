@@ -265,6 +265,13 @@ object {
     height: 200px;
 }
 
+#second-section .blog-post-item .entry-title {
+    margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    height: 2.5em;
+}
+
 /*--------------------------------------------------------------
 # Third Posts Section
 --------------------------------------------------------------*/
@@ -274,6 +281,14 @@ object {
 
 #third-posts-section article {
     margin-bottom: 0;
+}
+
+#third-posts-section .blog-post-item .entry-title {
+    margin-bottom: 3px;
+    font-size: 17px;
+    font-weight: bold;
+    height: 2.5em;
+    overflow: hidden;
 }
 
 #third-posts-section .blog-post-item {
@@ -327,6 +342,13 @@ object {
     height: 200px;
 }
 
+#fourth-posts-section .blog-post-item .entry-title {
+    margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    height: 2.5em;
+}
+
 /*--------------------------------------------------------------
 # Fifth Posts Section
 --------------------------------------------------------------*/
@@ -374,6 +396,10 @@ object {
     height: 197px;
 }
 
+#fifth-posts-section article:first-child .entry-title {
+    font-size: 18px;
+}
+
 #fifth-posts-section article:first-child .entry-container {
     width: auto;
     padding: 0 5px;
@@ -409,6 +435,14 @@ object {
 
 #sixth-posts-section .featured-image img {
     height: 100%;
+}
+
+#sixth-posts-section .entry-title {
+    margin-bottom: 3px;
+    font-size: 17px;
+    font-weight: bold;
+    height: 2.5em;
+    overflow: hidden;
 }
 
 #sixth-posts-section .entry-container {
@@ -648,7 +682,7 @@ object {
 
 .blog-post-item .entry-title {
     margin-bottom: 3px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -760,6 +794,10 @@ object {
 
     #featured-posts-section article:first-child .entry-title {
         font-size: 28px;
+    }
+
+    #featured-posts-section article .entry-title {
+        font-size: 18px;
     }
 }
 

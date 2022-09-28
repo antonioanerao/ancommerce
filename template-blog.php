@@ -12,6 +12,7 @@
 					<?php
 					$featured_posts_category = get_theme_mod( 'featured_posts_category', '0' );
 					$featured_posts_count    = apply_filters( 'featured_posts_count', 5 );
+                    $count = 1;
 				
 					$query = new WP_Query( templateBlogGetPosts($featured_posts_category, $featured_posts_count) );
 					if ( $query->have_posts() ) :
@@ -27,7 +28,7 @@
 										<?php ancommerce_entry_footer(); ?>
 
 										<header class="entry-header">
-											<h2 class="entry-title">
+											<h2 class="entry-title <?php echo 'featured-post-count-' . $count; ?> ">
 												<a href="<?php the_permalink();?>"><?php the_title();?></a>
 											</h2>
 								        </header>
@@ -38,10 +39,10 @@
 									</div><!-- .entry-container -->
 								</div><!-- .blog-post-item -->
 							</article>
-			    		<?php endwhile;
-		    		endif;
-					wp_reset_postdata(); ?>
-				</div><!-- .blog-archive -->
+			    		<?php $count++; endwhile; endif; wp_reset_postdata(); ?>
+
+
+                </div><!-- .blog-archive -->
 			</div><!-- .container -->
 		</section>
 	<?php endif;
@@ -253,7 +254,7 @@
 	<?php endif;
 
 	if ( get_theme_mod( 'sixth_posts_section_show', false ) ): ?>
-		<section id="third-posts-section">
+		<section id="sixth-posts-section">
 			<div class="container">
 				<?php
 				$sixth_section_title = get_theme_mod('sixth_section_title', 'sixth');

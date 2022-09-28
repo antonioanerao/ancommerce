@@ -1,16 +1,10 @@
 <?php /* Template Name: Blog Page */ get_header();
 
-	$featured_posts_section_show   		= get_theme_mod( 'featured_posts_section_show', false );
-	$business_posts_section_show   		= get_theme_mod( 'business_posts_section_show', false );
-	$lifestyle_posts_section_show  		= get_theme_mod( 'lifestyle_posts_section_show', false );
 	$first_advertisement_section_show  	= get_theme_mod( 'first_advertisement_section_show', false );
 	$first_advertisement_image          = get_theme_mod( 'first_advertisement_image' );
 	$first_advertisement_url            = get_theme_mod( 'first_advertisement_url', "#" );
-	$entertainment_posts_section_show   = get_theme_mod( 'entertainment_posts_section_show', false );
-	$health_posts_section_show   		= get_theme_mod( 'health_posts_section_show', false );
-	$travel_posts_section_show   		= get_theme_mod( 'travel_posts_section_show', false );
 
-	if ( $featured_posts_section_show == true ): ?>
+	if ( get_theme_mod( 'featured_posts_section_show', false ) ): ?>
   
 		<section id="featured-posts-section">
 			<div class="container">
@@ -18,14 +12,8 @@
 					<?php
 					$featured_posts_category = get_theme_mod( 'featured_posts_category', '0' );
 					$featured_posts_count    = apply_filters( 'featured_posts_count', 5 );
-					$featured_posts_args = array(
-						'post_type' 		=> 'post',
-		            	'post_status'	 	=> 'publish',
-						'category__in' 		=> absint( $featured_posts_category ),
-						'posts_per_page' 	=> absint( $featured_posts_count )
-					);
 				
-					$query = new WP_Query( $featured_posts_args );
+					$query = new WP_Query( templateBlogGetPosts($featured_posts_category, $featured_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -58,29 +46,23 @@
 		</section>
 	<?php endif;
 
-	if ( $business_posts_section_show == true ): ?>
-		<section id="business-posts-section">
+	if ( get_theme_mod( 'second_posts_section_show', false ) ): ?>
+		<section id="second-section">
 			<div class="container">
 				<?php
-				$business_section_title = get_theme_mod('business_section_title', 'Business');
-				if ( ! empty( $business_section_title ) ) { ?>
+				$second_section_title = get_theme_mod('second_section_title', 'Second');
+				if ( ! empty( $second_section_title ) ) { ?>
 					<div class="section-title">
-						<h2><?php echo $business_section_title; ?></h2>
+						<h2><?php echo $second_section_title; ?></h2>
 					</div><!-- .section-title -->
 				<?php } ?>
 
 				<div class="blog-archive columns-4 clear">
 					<?php
-					$business_posts_category = get_theme_mod( 'business_posts_category', '0' );
-					$business_posts_count    = apply_filters( 'business_posts_count', 4 );
-					$business_posts_args = array(
-						'post_type' 		=> 'post',
-		            	'post_status'	 	=> 'publish',
-						'category__in' 		=> absint( $business_posts_category ),
-						'posts_per_page' 	=> absint( $business_posts_count )
-					);
+					$second_posts_category = get_theme_mod( 'second_posts_category', '0' );
+					$second_posts_count    = apply_filters( 'second_posts_count', 4 );
 				
-					$query = new WP_Query( $business_posts_args );
+					$query = new WP_Query( templateBlogGetPosts($second_posts_category, $second_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -113,7 +95,7 @@
 		</section>
 	<?php endif;
 
-	if ( $lifestyle_posts_section_show == true ): ?>
+	if ( get_theme_mod( 'lifestyle_posts_section_show', false ) ): ?>
 		<section id="lifestyle-posts-section">
 			<div class="container">
 				<?php
@@ -128,14 +110,8 @@
 					<?php
 					$lifestyle_posts_category = get_theme_mod( 'lifestyle_posts_category', '0' );
 					$lifestyle_posts_count    = apply_filters( 'lifestyle_posts_count', 12 );
-					$lifestyle_posts_args = array(
-						'post_type' 		=> 'post',
-		            	'post_status'	 	=> 'publish',
-						'category__in' 		=> absint( $lifestyle_posts_category ),
-						'posts_per_page' 	=> absint( $lifestyle_posts_count )
-					);
 				
-					$query = new WP_Query( $lifestyle_posts_args );
+					$query = new WP_Query( templateBlogGetPosts($lifestyle_posts_category, $lifestyle_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -168,7 +144,7 @@
 		</section>
 	<?php endif;
 
-	if ( $first_advertisement_section_show == true ): ?>
+	if ( $first_advertisement_section_show ): ?>
 		<?php if( !empty( $first_advertisement_image ) && !empty( $first_advertisement_url ) ) : ?>
 			<section id="first-advertisement">
 				<div class="container">
@@ -178,7 +154,7 @@
         <?php endif; ?>
 	<?php endif;
 
-	if ( $entertainment_posts_section_show == true ): ?>
+	if ( get_theme_mod( 'entertainment_posts_section_show', false ) ): ?>
 		<section id="entertainment-posts-section">
 			<div class="container">
 				<?php
@@ -193,14 +169,8 @@
 					<?php
 					$entertainment_posts_category = get_theme_mod( 'entertainment_posts_category', '0' );
 					$entertainment_posts_count    = apply_filters( 'entertainment_posts_count', 4 );
-					$entertainment_posts_args = array(
-						'post_type' 		=> 'post',
-		            	'post_status'	 	=> 'publish',
-						'category__in' 		=> absint( $entertainment_posts_category ),
-						'posts_per_page' 	=> absint( $entertainment_posts_count )
-					);
 				
-					$query = new WP_Query( $entertainment_posts_args );
+					$query = new WP_Query( templateBlogGetPosts($entertainment_posts_category, $entertainment_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -233,7 +203,7 @@
 		</section>
 	<?php endif;
 
-	if ( $health_posts_section_show == true ): ?>
+	if ( get_theme_mod( 'health_posts_section_show', false ) ): ?>
 		<section id="health-posts-section">
 			<div class="container">
 				<?php
@@ -248,14 +218,8 @@
 					<?php
 					$health_posts_category = get_theme_mod( 'health_posts_category', '0' );
 					$health_posts_count    = apply_filters( 'health_posts_count', 10 );
-					$health_posts_args = array(
-						'post_type' 		=> 'post',
-		            	'post_status'	 	=> 'publish',
-						'category__in' 		=> absint( $health_posts_category ),
-						'posts_per_page' 	=> absint( $health_posts_count )
-					);
 				
-					$query = new WP_Query( $health_posts_args );
+					$query = new WP_Query( templateBlogGetPosts($health_posts_category, $health_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -288,7 +252,7 @@
 		</section>
 	<?php endif;
 
-	if ( $travel_posts_section_show == true ): ?>
+	if ( get_theme_mod( 'travel_posts_section_show', false ) ): ?>
 		<section id="travel-posts-section">
 			<div class="container">
 				<?php
@@ -303,14 +267,8 @@
 					<?php
 					$travel_posts_category = get_theme_mod( 'travel_posts_category', '0' );
 					$travel_posts_count    = apply_filters( 'travel_posts_count', 8 );
-					$travel_posts_args = array(
-						'post_type' 		=> 'post',
-		            	'post_status'	 	=> 'publish',
-						'category__in' 		=> absint( $travel_posts_category ),
-						'posts_per_page' 	=> absint( $travel_posts_count )
-					);
 				
-					$query = new WP_Query( $travel_posts_args );
+					$query = new WP_Query( templateBlogGetPosts($travel_posts_category, $travel_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -344,7 +302,5 @@
 	<?php endif;
 
 	?>
-
-
 
 <?php get_footer(); ?>

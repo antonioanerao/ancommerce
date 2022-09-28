@@ -56,14 +56,14 @@ $wp_customize->add_control(
     )
 );
 
-// Business Posts Section
-$wp_customize->add_section('section_business_posts', array(
-    'title'       => __('Business', 'ancommerce'),
+// Second Posts Section
+$wp_customize->add_section('section_second_posts', array(
+    'title'       => __('Second', 'ancommerce'),
     'panel'       => 'homepage_sections'
 ));
 
 // Show Section
-$wp_customize->add_setting('business_posts_section_show', array(
+$wp_customize->add_setting('second_posts_section_show', array(
         'default' 			=> false,
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
@@ -71,30 +71,30 @@ $wp_customize->add_setting('business_posts_section_show', array(
     )
 );
 
-$wp_customize->add_control('business_posts_section_show', array(
+$wp_customize->add_control('second_posts_section_show', array(
         'label' 	=> __('Show Section', 'ancommerce'),
-        'section' 	=> 'section_business_posts',
+        'section' 	=> 'section_second_posts',
         'type' 		=> 'checkbox',
     )
 );
 
 // Title
-$wp_customize->add_setting( 'business_section_title', array(
-    'default'           => esc_html__('Business', 'ancommerce'),
+$wp_customize->add_setting( 'second_section_title', array(
+    'default'           => esc_html__('Second', 'ancommerce'),
     'type'              => 'theme_mod',
     'capability'        => 'edit_theme_options',
     'sanitize_callback' => 'sanitize_text_field',
     'transport'         => 'refresh',
 ) );
 
-$wp_customize->add_control( 'business_section_title', array(
+$wp_customize->add_control( 'second_section_title', array(
     'label'       => __( 'Title', 'ancommerce' ),
-    'section'     => 'section_business_posts',
+    'section'     => 'section_second_posts',
     'type'        => 'text',
 ) );
 
 // Category
-$wp_customize->add_setting('business_posts_category',
+$wp_customize->add_setting('second_posts_category',
     array(
         'default' 			=> '0',
         'capability'        => 'edit_theme_options',
@@ -104,11 +104,11 @@ $wp_customize->add_setting('business_posts_category',
 );
 
 $wp_customize->add_control(
-    new Customize_Category_Control( $wp_customize, 'business_posts_category',
+    new Customize_Category_Control( $wp_customize, 'second_posts_category',
         array(
             'label'         => __( 'Select Category', 'ancommerce' ),
-            'section'       => 'section_business_posts',
-            'settings'  	=> 'business_posts_category',
+            'section'       => 'section_second_posts',
+            'settings'  	=> 'second_posts_category',
         )
     )
 );

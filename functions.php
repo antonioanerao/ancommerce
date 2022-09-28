@@ -1,5 +1,6 @@
 <?php
 //Require customizer
+require_once get_template_directory() . "/inc/customizer-classes.php";
 require_once get_template_directory() . "/inc/customizer.php";
 
 if(class_exists('WooCommerce')) {
@@ -12,6 +13,10 @@ function load_scripts() {
     /*
      * Custom theme colors
      */
+    
+    wp_enqueue_style( 'template-blog', get_template_directory_uri(). '/assets/template-blog.css',
+        array(), '1.0.1', 'all' );
+    
 
     if(get_theme_mod( 'set_theme_color') == 'darkorange') {
         wp_enqueue_style( 'theme-darkorange', get_template_directory_uri(). '/assets/theme-darkorange.css',
@@ -27,11 +32,10 @@ function load_scripts() {
         wp_enqueue_style( 'theme-light', get_template_directory_uri(). '/assets/theme-light.css',
             array(), '1.0.1', 'all' );
     }
-
-
+    
     wp_enqueue_style( 'style', get_template_directory_uri(). '/style.css',
         array(), '1.0.1', 'all' );
-
+    
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri(). '/assets/vendor/bootstrap/css/bootstrap.css',
         array(), '4.5.0', 'all' );
 
@@ -273,3 +277,19 @@ function o_woocommerce_confirm_password_validation( $posted ) {
     }
 }
 add_action( 'woocommerce_after_checkout_validation', 'o_woocommerce_confirm_password_validation', 10, 2 );
+
+/*
+ * Template Blog
+ */
+
+require_once('inc/template-tag.php');
+require_once('inc/sanitize.php');
+
+function templateBlogGetPosts($category, $count): array {
+    return [
+	    'post_type' 		=> 'post',
+	    'post_status'	 	=> 'publish',
+	    'category__in' 		=> absint( $category ),
+	    'posts_per_page' 	=> absint( $count )
+    ];
+}

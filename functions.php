@@ -16,6 +16,7 @@ function load_scripts() {
     
     wp_enqueue_style( 'template-blog', get_template_directory_uri(). '/assets/template-blog.css',
         array(), '1.0.1', 'all' );
+    
 
     if(get_theme_mod( 'set_theme_color') == 'darkorange') {
         wp_enqueue_style( 'theme-darkorange', get_template_directory_uri(). '/assets/theme-darkorange.css',

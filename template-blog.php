@@ -95,23 +95,23 @@
 		</section>
 	<?php endif;
 
-	if ( get_theme_mod( 'lifestyle_posts_section_show', false ) ): ?>
-		<section id="lifestyle-posts-section">
+	if ( get_theme_mod( 'third_posts_section_show', false ) ): ?>
+		<section id="third-posts-section">
 			<div class="container">
 				<?php
-				$lifestyle_section_title = get_theme_mod('lifestyle_section_title', 'Lifestyle');
-				if ( ! empty( $lifestyle_section_title ) ) { ?>
+				$third_section_title = get_theme_mod('third_section_title', 'Third Section');
+				if ( ! empty( $third_section_title ) ) { ?>
 					<div class="section-title">
-						<h2><?php echo $lifestyle_section_title; ?></h2>
+						<h2><?php echo $third_section_title; ?></h2>
 					</div><!-- .section-title -->
 				<?php } ?>
 
 				<div class="blog-archive grid columns-4 clear">
 					<?php
-					$lifestyle_posts_category = get_theme_mod( 'lifestyle_posts_category', '0' );
-					$lifestyle_posts_count    = apply_filters( 'lifestyle_posts_count', 12 );
+					$third_posts_category = get_theme_mod( 'third_posts_category', '0' );
+					$third_posts_count    = apply_filters( 'third_posts_count', 12 );
 				
-					$query = new WP_Query( templateBlogGetPosts($lifestyle_posts_category, $lifestyle_posts_count) );
+					$query = new WP_Query( templateBlogGetPosts($third_posts_category, $third_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -154,23 +154,23 @@
         <?php endif; ?>
 	<?php endif;
 
-	if ( get_theme_mod( 'entertainment_posts_section_show', false ) ): ?>
-		<section id="entertainment-posts-section">
+	if ( get_theme_mod( 'fourth_posts_section_show', false ) ): ?>
+		<section id="fourth-posts-section">
 			<div class="container">
 				<?php
-				$entertainment_section_title = get_theme_mod('entertainment_section_title', 'entertainment');
-				if ( ! empty( $entertainment_section_title ) ) { ?>
+				$fourth_section_title = get_theme_mod('fourth_section_title', 'fourth');
+				if ( ! empty( $fourth_section_title ) ) { ?>
 					<div class="section-title">
-						<h2><?php echo $entertainment_section_title; ?></h2>
+						<h2><?php echo $fourth_section_title; ?></h2>
 					</div><!-- .section-title -->
 				<?php } ?>
 
 				<div class="blog-archive columns-4 clear">
 					<?php
-					$entertainment_posts_category = get_theme_mod( 'entertainment_posts_category', '0' );
-					$entertainment_posts_count    = apply_filters( 'entertainment_posts_count', 4 );
+					$fourth_posts_category = get_theme_mod( 'fourth_posts_category', '0' );
+					$fourth_posts_count    = apply_filters( 'fourth_posts_count', 4 );
 				
-					$query = new WP_Query( templateBlogGetPosts($entertainment_posts_category, $entertainment_posts_count) );
+					$query = new WP_Query( templateBlogGetPosts($fourth_posts_category, $fourth_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -203,23 +203,23 @@
 		</section>
 	<?php endif;
 
-	if ( get_theme_mod( 'health_posts_section_show', false ) ): ?>
-		<section id="health-posts-section">
+	if ( get_theme_mod( 'fifth_posts_section_show', false ) ): ?>
+		<section id="fifth-posts-section">
 			<div class="container">
 				<?php
-				$health_section_title = get_theme_mod('health_section_title', 'health');
-				if ( ! empty( $health_section_title ) ) { ?>
+				$fifth_section_title = get_theme_mod('fifth_section_title', 'fifth');
+				if ( ! empty( $fifth_section_title ) ) { ?>
 					<div class="section-title">
-						<h2><?php echo $health_section_title; ?></h2>
+						<h2><?php echo $fifth_section_title; ?></h2>
 					</div><!-- .section-title -->
 				<?php } ?>
 
 				<div class="blog-archive grid columns-4 clear">
 					<?php
-					$health_posts_category = get_theme_mod( 'health_posts_category', '0' );
-					$health_posts_count    = apply_filters( 'health_posts_count', 10 );
+					$fifth_posts_category = get_theme_mod( 'fifth_posts_category', '0' );
+					$fifth_posts_count    = apply_filters( 'fifth_posts_count', 10 );
 				
-					$query = new WP_Query( templateBlogGetPosts($health_posts_category, $health_posts_count) );
+					$query = new WP_Query( templateBlogGetPosts($fifth_posts_category, $fifth_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -252,23 +252,23 @@
 		</section>
 	<?php endif;
 
-	if ( get_theme_mod( 'travel_posts_section_show', false ) ): ?>
-		<section id="travel-posts-section">
+	if ( get_theme_mod( 'sixth_posts_section_show', false ) ): ?>
+		<section id="third-posts-section">
 			<div class="container">
 				<?php
-				$travel_section_title = get_theme_mod('travel_section_title', 'travel');
-				if ( ! empty( $travel_section_title ) ) { ?>
+				$sixth_section_title = get_theme_mod('sixth_section_title', 'sixth');
+				if ( ! empty( $sixth_section_title ) ) { ?>
 					<div class="section-title">
-						<h2><?php echo $travel_section_title; ?></h2>
+						<h2><?php echo $sixth_section_title; ?></h2>
 					</div><!-- .section-title -->
 				<?php } ?>
 
 				<div class="blog-archive grid columns-4 clear">
 					<?php
-					$travel_posts_category = get_theme_mod( 'travel_posts_category', '0' );
-					$travel_posts_count    = apply_filters( 'travel_posts_count', 8 );
+					$sixth_posts_category = get_theme_mod( 'sixth_posts_category', '0' );
+					$sixth_posts_count    = apply_filters( 'sixth_posts_count', 8 );
 				
-					$query = new WP_Query( templateBlogGetPosts($travel_posts_category, $travel_posts_count) );
+					$query = new WP_Query( templateBlogGetPosts($sixth_posts_category, $sixth_posts_count) );
 					if ( $query->have_posts() ) :
 						while ( $query->have_posts() ) : $query->the_post(); ?>
 

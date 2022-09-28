@@ -59,6 +59,105 @@
     margin-bottom: 10px;
 }
 
+
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+    display: block;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+.error404 #primary,
+.has-sidebar.error404 #primary {
+    width: 100%;
+    float: none;
+    padding: 0;
+    text-align: center;
+}
+
+.error-404.not-found .title {
+    font-size: 150px;
+    font-weight: bold;
+    line-height: 1;
+    color: #950c0c;
+}
+
+.error-404.not-found input.search-field {
+    min-width: 300px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.has-sidebar.no-sidebar #primary {
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.has-sidebar.no-sidebar #secondary {
+    display: none;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+    display: inline-block;
+}
+
+
 /*--------------------------------------------------------------
 # Section Title
 --------------------------------------------------------------*/
@@ -167,17 +266,17 @@
 }
 
 /*--------------------------------------------------------------
-# Lifestyle Posts Section
+# Third Posts Section
 --------------------------------------------------------------*/
-#lifestyle-posts-section {
+#third-posts-section {
     margin: 30px 0;
 }
 
-#lifestyle-posts-section article {
+#third-posts-section article {
     margin-bottom: 0;
 }
 
-#lifestyle-posts-section .blog-post-item {
+#third-posts-section .blog-post-item {
     display: flex;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -188,17 +287,17 @@
     border-width: 0 1px 1px 1px;
 }
 
-#lifestyle-posts-section .featured-image {
+#third-posts-section .featured-image {
     width: 104px;
     height: 80px;
     margin-bottom: 0;
 }
 
-#lifestyle-posts-section .featured-image img {
+#third-posts-section .featured-image img {
     height: 100%;
 }
 
-#lifestyle-posts-section .entry-container {
+#third-posts-section .entry-container {
     width: calc( 100% - 104px );
     padding: 0 0 0 10px;
 }
@@ -218,28 +317,28 @@
 }
 
 /*--------------------------------------------------------------
-# Entertainment Posts Section
+# Fourth Posts Section
 --------------------------------------------------------------*/
-#entertainment-posts-section {
+#fourth-posts-section {
     margin: 30px 0;
 }
 
-#entertainment-posts-section .featured-image img {
+#fourth-posts-section .featured-image img {
     height: 200px;
 }
 
 /*--------------------------------------------------------------
-# Health Posts Section
+# Fifth Posts Section
 --------------------------------------------------------------*/
-#health-posts-section {
+#fifth-posts-section {
     margin: 30px 0;
 }
 
-#health-posts-section article {
+#fifth-posts-section article {
     margin-bottom: 0;
 }
 
-#health-posts-section .blog-post-item {
+#fifth-posts-section .blog-post-item {
     display: flex;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -250,48 +349,48 @@
     border-width: 0 1px 1px 1px;
 }
 
-#health-posts-section .featured-image {
+#fifth-posts-section .featured-image {
     width: 104px;
     height: 80px;
     margin-bottom: 0;
 }
 
-#health-posts-section .featured-image img {
+#fifth-posts-section .featured-image img {
     height: 100%;
 }
 
-#health-posts-section .entry-container {
+#fifth-posts-section .entry-container {
     width: calc( 100% - 104px );
     padding: 0 0 0 10px;
 }
 
-#health-posts-section article:first-child .featured-image {
+#fifth-posts-section article:first-child .featured-image {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
 }
 
-#health-posts-section article:first-child .featured-image img {
+#fifth-posts-section article:first-child .featured-image img {
     height: 197px;
 }
 
-#health-posts-section article:first-child .entry-container {
+#fifth-posts-section article:first-child .entry-container {
     width: auto;
     padding: 0 5px;
 }
 
 /*--------------------------------------------------------------
-# Travel Posts Section
+# Sixth Posts Section
 --------------------------------------------------------------*/
-#travel-posts-section {
+#sixth-posts-section {
     margin: 30px 0;
 }
 
-#travel-posts-section article {
+#sixth-posts-section article {
     margin-bottom: 0;
 }
 
-#travel-posts-section .blog-post-item {
+#sixth-posts-section .blog-post-item {
     display: flex;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -302,37 +401,19 @@
     border-width: 0 1px 1px 1px;
 }
 
-#travel-posts-section .featured-image {
+#sixth-posts-section .featured-image {
     width: 104px;
     height: 80px;
     margin-bottom: 0;
 }
 
-#travel-posts-section .featured-image img {
+#sixth-posts-section .featured-image img {
     height: 100%;
 }
 
-#travel-posts-section .entry-container {
+#sixth-posts-section .entry-container {
     width: calc( 100% - 104px );
     padding: 0 0 0 10px;
-}
-
-#travel-posts-section article:first-child .featured-image,
-#travel-posts-section article:nth-child(4) .featured-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-#travel-posts-section article:first-child .featured-image img,
-#travel-posts-section article:nth-child(4) .featured-image img {
-    height: 197px;
-}
-
-#travel-posts-section article:first-child .entry-container,
-#travel-posts-section article:nth-child(4) .entry-container {
-    width: auto;
-    padding: 0 5px;
 }
 
 /*--------------------------------------------------------------

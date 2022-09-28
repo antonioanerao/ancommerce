@@ -113,14 +113,14 @@ $wp_customize->add_control(
     )
 );
 
-// Lifestyle Posts Section
-$wp_customize->add_section('section_lifestyle_posts', array(
-    'title'       => __('Lifestyle', 'ancommerce'),
+// Third Posts Section
+$wp_customize->add_section('section_third_posts', array(
+    'title'       => __('Third', 'ancommerce'),
     'panel'       => 'homepage_sections'
 ));
 
 // Show Section
-$wp_customize->add_setting('lifestyle_posts_section_show', array(
+$wp_customize->add_setting('third_posts_section_show', array(
         'default' 			=> false,
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
@@ -128,30 +128,30 @@ $wp_customize->add_setting('lifestyle_posts_section_show', array(
     )
 );
 
-$wp_customize->add_control('lifestyle_posts_section_show', array(
+$wp_customize->add_control('third_posts_section_show', array(
         'label' 	=> __('Show Section', 'ancommerce'),
-        'section' 	=> 'section_lifestyle_posts',
+        'section' 	=> 'section_third_posts',
         'type' 		=> 'checkbox',
     )
 );
 
 // Title
-$wp_customize->add_setting( 'lifestyle_section_title', array(
-    'default'           => esc_html__('Lifestyle', 'ancommerce'),
+$wp_customize->add_setting( 'third_section_title', array(
+    'default'           => esc_html__('Third', 'ancommerce'),
     'type'              => 'theme_mod',
     'capability'        => 'edit_theme_options',
     'sanitize_callback' => 'sanitize_text_field',
     'transport'         => 'refresh',
 ) );
 
-$wp_customize->add_control( 'lifestyle_section_title', array(
+$wp_customize->add_control( 'third_section_title', array(
     'label'       => __( 'Title', 'ancommerce' ),
-    'section'     => 'section_lifestyle_posts',
+    'section'     => 'section_third_posts',
     'type'        => 'text',
 ) );
 
 // Category
-$wp_customize->add_setting('lifestyle_posts_category',
+$wp_customize->add_setting('third_posts_category',
     array(
         'default' 			=> '0',
         'capability'        => 'edit_theme_options',
@@ -161,11 +161,11 @@ $wp_customize->add_setting('lifestyle_posts_category',
 );
 
 $wp_customize->add_control(
-    new Customize_Category_Control( $wp_customize, 'lifestyle_posts_category',
+    new Customize_Category_Control( $wp_customize, 'third_posts_category',
         array(
             'label'         => __( 'Select Category', 'ancommerce' ),
-            'section'       => 'section_lifestyle_posts',
-            'settings'  	=> 'lifestyle_posts_category',
+            'section'       => 'section_third_posts',
+            'settings'  	=> 'third_posts_category',
         )
     )
 );
@@ -219,14 +219,14 @@ $wp_customize->add_control( 'first_advertisement_url', array(
     'type'              => 'url',
 ) );
 
-// Entertainment Posts Section
-$wp_customize->add_section('section_entertainment_posts', array(
-    'title'       => __('Entertainment', 'ancommerce'),
+// Fourth Posts Section
+$wp_customize->add_section('section_fourth_posts', array(
+    'title'       => __('Fourth', 'ancommerce'),
     'panel'       => 'homepage_sections'
 ));
 
 // Show Section
-$wp_customize->add_setting('entertainment_posts_section_show', array(
+$wp_customize->add_setting('fourth_posts_section_show', array(
         'default' 			=> false,
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
@@ -234,30 +234,30 @@ $wp_customize->add_setting('entertainment_posts_section_show', array(
     )
 );
 
-$wp_customize->add_control('entertainment_posts_section_show', array(
+$wp_customize->add_control('fourth_posts_section_show', array(
         'label' 	=> __('Show Section', 'ancommerce'),
-        'section' 	=> 'section_entertainment_posts',
+        'section' 	=> 'section_fourth_posts',
         'type' 		=> 'checkbox',
     )
 );
 
 // Title
-$wp_customize->add_setting( 'entertainment_section_title', array(
-    'default'           => esc_html__('Entertainment', 'ancommerce'),
+$wp_customize->add_setting( 'fourth_section_title', array(
+    'default'           => esc_html__('Fourth', 'ancommerce'),
     'type'              => 'theme_mod',
     'capability'        => 'edit_theme_options',
     'sanitize_callback' => 'sanitize_text_field',
     'transport'         => 'refresh',
 ) );
 
-$wp_customize->add_control( 'entertainment_section_title', array(
+$wp_customize->add_control( 'fourth_section_title', array(
     'label'       => __( 'Title', 'ancommerce' ),
-    'section'     => 'section_entertainment_posts',
+    'section'     => 'section_fourth_posts',
     'type'        => 'text',
 ) );
 
 // Category
-$wp_customize->add_setting('entertainment_posts_category',
+$wp_customize->add_setting('fourth_posts_category',
     array(
         'default' 			=> '0',
         'capability'        => 'edit_theme_options',
@@ -267,23 +267,23 @@ $wp_customize->add_setting('entertainment_posts_category',
 );
 
 $wp_customize->add_control(
-    new Customize_Category_Control( $wp_customize, 'entertainment_posts_category',
+    new Customize_Category_Control( $wp_customize, 'fourth_posts_category',
         array(
             'label'         => __( 'Select Category', 'ancommerce' ),
-            'section'       => 'section_entertainment_posts',
-            'settings'  	=> 'entertainment_posts_category',
+            'section'       => 'section_fourth_posts',
+            'settings'  	=> 'fourth_posts_category',
         )
     )
 );
 
-// Health Posts Section
-$wp_customize->add_section('section_health_posts', array(
-    'title'       => __('Health', 'ancommerce'),
+// Fifth Posts Section
+$wp_customize->add_section('section_fifth_posts', array(
+    'title'       => __('Fifth', 'ancommerce'),
     'panel'       => 'homepage_sections'
 ));
 
 // Show Section
-$wp_customize->add_setting('health_posts_section_show', array(
+$wp_customize->add_setting('fifth_posts_section_show', array(
         'default' 			=> false,
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
@@ -291,30 +291,30 @@ $wp_customize->add_setting('health_posts_section_show', array(
     )
 );
 
-$wp_customize->add_control('health_posts_section_show', array(
+$wp_customize->add_control('fifth_posts_section_show', array(
         'label' 	=> __('Show Section', 'ancommerce'),
-        'section' 	=> 'section_health_posts',
+        'section' 	=> 'section_fifth_posts',
         'type' 		=> 'checkbox',
     )
 );
 
 // Title
-$wp_customize->add_setting( 'health_section_title', array(
-    'default'           => esc_html__('Health', 'ancommerce'),
+$wp_customize->add_setting( 'fifth_section_title', array(
+    'default'           => esc_html__('Fifth', 'ancommerce'),
     'type'              => 'theme_mod',
     'capability'        => 'edit_theme_options',
     'sanitize_callback' => 'sanitize_text_field',
     'transport'         => 'refresh',
 ) );
 
-$wp_customize->add_control( 'health_section_title', array(
+$wp_customize->add_control( 'fifth_section_title', array(
     'label'       => __( 'Title', 'ancommerce' ),
-    'section'     => 'section_health_posts',
+    'section'     => 'section_fifth_posts',
     'type'        => 'text',
 ) );
 
 // Category
-$wp_customize->add_setting('health_posts_category',
+$wp_customize->add_setting('fifth_posts_category',
     array(
         'default' 			=> '0',
         'capability'        => 'edit_theme_options',
@@ -324,23 +324,23 @@ $wp_customize->add_setting('health_posts_category',
 );
 
 $wp_customize->add_control(
-    new Customize_Category_Control( $wp_customize, 'health_posts_category',
+    new Customize_Category_Control( $wp_customize, 'fifth_posts_category',
         array(
             'label'         => __( 'Select Category', 'ancommerce' ),
-            'section'       => 'section_health_posts',
-            'settings'  	=> 'health_posts_category',
+            'section'       => 'section_fifth_posts',
+            'settings'  	=> 'fifth_posts_category',
         )
     )
 );
 
-// Travel Posts Section
-$wp_customize->add_section('section_travel_posts', array(
-    'title'       => __('Travel', 'ancommerce'),
+// Sixth Posts Section
+$wp_customize->add_section('section_sixth_posts', array(
+    'title'       => __('Sixth', 'ancommerce'),
     'panel'       => 'homepage_sections'
 ));
 
 // Show Section
-$wp_customize->add_setting('travel_posts_section_show', array(
+$wp_customize->add_setting('sixth_posts_section_show', array(
         'default' 			=> false,
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
@@ -348,30 +348,30 @@ $wp_customize->add_setting('travel_posts_section_show', array(
     )
 );
 
-$wp_customize->add_control('travel_posts_section_show', array(
+$wp_customize->add_control('sixth_posts_section_show', array(
         'label' 	=> __('Show Section', 'ancommerce'),
-        'section' 	=> 'section_travel_posts',
+        'section' 	=> 'section_sixth_posts',
         'type' 		=> 'checkbox',
     )
 );
 
 // Title
-$wp_customize->add_setting( 'travel_section_title', array(
-    'default'           => esc_html__('Travel', 'ancommerce'),
+$wp_customize->add_setting( 'sixth_section_title', array(
+    'default'           => esc_html__('Sixth', 'ancommerce'),
     'type'              => 'theme_mod',
     'capability'        => 'edit_theme_options',
     'sanitize_callback' => 'sanitize_text_field',
     'transport'         => 'refresh',
 ) );
 
-$wp_customize->add_control( 'travel_section_title', array(
+$wp_customize->add_control( 'sixth_section_title', array(
     'label'       => __( 'Title', 'ancommerce' ),
-    'section'     => 'section_travel_posts',
+    'section'     => 'section_sixth_posts',
     'type'        => 'text',
 ) );
 
 // Category
-$wp_customize->add_setting('travel_posts_category',
+$wp_customize->add_setting('sixth_posts_category',
     array(
         'default' 			=> '0',
         'capability'        => 'edit_theme_options',
@@ -381,11 +381,11 @@ $wp_customize->add_setting('travel_posts_category',
 );
 
 $wp_customize->add_control(
-    new Customize_Category_Control( $wp_customize, 'travel_posts_category',
+    new Customize_Category_Control( $wp_customize, 'sixth_posts_category',
         array(
             'label'         => __( 'Select Category', 'ancommerce' ),
-            'section'       => 'section_travel_posts',
-            'settings'  	=> 'travel_posts_category',
+            'section'       => 'section_sixth_posts',
+            'settings'  	=> 'sixth_posts_category',
         )
     )
 );

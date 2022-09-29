@@ -1,4 +1,5 @@
 version: "3.7"
+
 services:
   wp-ecommerce-html:
     image: antonioanerao/wordpress-ldap:1.0.0

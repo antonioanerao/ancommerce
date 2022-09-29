@@ -1,0 +1,58 @@
+version: "3.7"
+services:
+  wp-ecommerce-html:
+    image: antonioanerao/wordpress-ldap:1.0.0
+    container_name: wp-ecommerce-html
+    restart: on-failure
+    networks:
+      - local
+    environment:
+      WORDPRESS_DB_HOST: wp-ecommerce-database
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wp-ecommerce-html:/var/www/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=local"
+      - "traefik.http.routers.wpecommerce.rule=Host(`wpecommerce.docker.localhost`)"
+      - "traefik.http.routers.wpecommerce.entrypoints=web"
+
+  wp-ecommerce-database:
+    image: ubuntu/mysql:8.0-22.04_beta
+    container_name: wp-ecommerce-database
+    restart: on-failure
+    networks:
+      - local
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - wp-ecommerce-database:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: on-failure
+    networks:
+      - local
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=local"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.docker.localhost`)"
+      - "traefik.http.routers.phpmyadmin.entrypoints=web"
+    environment:
+      - PMA_ARBITRARY=1
+
+volumes:
+  wp-ecommerce-html:
+    external: true
+  wp-ecommerce-database:
+    external: true
+
+networks:
+  local:
+    external: true

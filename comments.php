@@ -20,9 +20,9 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div class="container">
+<div class="container" style="margin-top: -50px">
     <div class="row">
-        <div class="<?php if( is_active_sidebar( 'sidebar-post' ) ) { echo "col-md-12 col-lg-8"; } else { echo "col-md-10 col-lg-10 mx-auto"; } ?>">
+        <div class="<?php if( is_active_sidebar( 'sidebar-post' ) ) { echo "col-md-12 col-lg-8"; } else { echo "col-md-12 col-lg-10 mx-auto"; } ?>">
             <div id="comments" class="comments-area">
 				
 				<?php if ( have_comments() ) : ?>

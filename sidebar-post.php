@@ -1,6 +1,6 @@
 <?php if( is_active_sidebar( 'sidebar-post' ) ): ?>
-	<aside class="col-lg-4 col-md-10 mx-auto">
-		<div class="card" style="margin-top: 30px">
+	<aside class="col-lg-4 col-md-12 mx-auto">
+		<div class="card mt-2">
 			<div class="card-body">
 				<?php dynamic_sidebar( 'sidebar-post' ); ?>
 			</div>

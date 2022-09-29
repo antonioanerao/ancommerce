@@ -2,7 +2,7 @@
     <div id="main">
         <div class="container">
             <div class="row">
-                <div class="<?php if( is_active_sidebar( 'sidebar-post' ) ) { echo "col-md-12 col-lg-8"; } else { echo "offset-md-1 offset-lg-1 col-sm-12 col-md-10 col-lg-10"; } ?> mx-auto">
+                <div class="<?php if( is_active_sidebar( 'sidebar-post' ) ) { echo "col-md-12 col-lg-8"; } else { echo "offset-lg-1 col-sm-12 col-md-12 col-lg-10"; } ?> mx-auto">
 
                     <!-- Post Content -->
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

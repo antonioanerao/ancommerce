@@ -7,7 +7,6 @@ if(class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/wc-modifications.php';
 }
 
-
 // Carregando nossos scripts e folhas de estilos
 function load_scripts() {
     /*
@@ -184,6 +183,17 @@ function ancommerce_sidebars(){
             'before_title'	=> '<h4 class="widget-title">',
             'after_title'	=> '</h4>',
         ));
+	
+	
+	register_sidebar([
+		'name' => 'Post Sidebar',
+		'id' => 'sidebar-post',
+		'description' => 'Adiciona um sidebar no post',
+		'before_widget' => '<div class="sidebar">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 style="display: none;">',
+		'after_title' => '</h2>'
+	]);
 }
 
 /**

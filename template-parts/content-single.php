@@ -1,48 +1,37 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Fancy Lab
- */
+<div id="primary" class="content-area">
+    <div id="main">
+        <div class="container">
+            <div class="row">
+                <div class="<?php if( is_active_sidebar( 'sidebar-post' ) ) { echo "col-md-12 col-lg-8"; } else { echo "offset-md-1 offset-lg-1 col-sm-12 col-md-10 col-lg-10"; } ?> mx-auto">
 
-?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header>
-        <h1><?php the_title(); ?></h1>
-        <div class="meta">
-            <p>
-                <?php esc_html_e( 'Published by', 'ancommerce' ); ?> <?php the_author_posts_link(); ?>
-                <?php esc_html_e( 'on', 'ancommerce' ) ?> <?php echo get_the_date(); ?>
-                <br />
-                <?php if( has_category() ): ?>
-                <?php esc_html_e( 'Categories', 'ancommerce' ) ?>: <span><?php the_category( ' ' ); ?>
-                  <br/>
-                <?php endif; ?>
-                    <?php if( has_tag() ): ?>
-                        <?php esc_html_e( 'Tags', 'ancommerce' ) ?>: <span><?php the_tags( '', ', '); ?></span>
-                    <?php endif; ?>
-            </p>
+                    <!-- Post Content -->
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <header>
+                            <h1 class="text-center"><?php the_title(); ?></h1>
+                            <div class="text-center">
+                                <?php
+                                    if(has_post_thumbnail()) :
+                                        the_post_thumbnail('ancommerce-blog-single', ['class' => 'img-fluid img-thumbnail mt-1']);
+                                    endif;
+                                ?>
+                            </div>
+                        </header>
+	                    <?php
+                            the_content();
+                            if(is_active_sidebar('pesquisar-post')) :
+                                [dynamic_sidebar('pesquisar-post')];
+                            endif;
+                        ?>
+                        <hr>
+                        <p>
+                            <b>Categorias: </b><?php the_category(', '); ?> <br>
+		                    <?php the_tags('<b>Tags:</b> ', ', '); ?>
+                        </p>
+                        <hr>
+                    </article>
+                </div>
+	            <?php get_sidebar('post'); ?>
+            </div>
         </div>
-        <div class="post-thumbnail">
-            <?php
-            if( has_post_thumbnail() ):
-                the_post_thumbnail( 'ancommerce-blog-single', array( 'class' => '') );
-            endif;
-            ?>
-        </div>
-    </header>
-    <div class="content">
-        <?php
-        wp_link_pages(
-            array(
-                'before'    => '<p class="inner-pagination">' . esc_html__( 'Pages:', 'ancommerce' ),
-                'after'     => '</p>',
-            )
-        );
-        ?>
-        <?php the_content(); ?>
     </div>
-</article>
+</div>

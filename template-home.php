@@ -130,64 +130,63 @@
                 </div>
             </section>
 
-            <section class="bg-light text-center">
-                <div class="container-fluid p-0">
-                    <header class="bg-dark py-2">
-                        <div class="container px-4 px-lg-5 my-5">
-                            <div class="text-center text-white">
-                                <h1 class="display-4 fw-bolder">Last Products</h1>
+            <?php if(class_exists('WooCommerce' )) : ?>
+
+                <section class="bg-light text-center">
+                    <div class="container-fluid p-0">
+                        <header class="bg-dark py-2">
+                            <div class="container px-4 px-lg-5 my-5">
+                                <div class="text-center text-white">
+                                    <h1 class="display-4 fw-bolder">Last Products</h1>
+                                </div>
                             </div>
-                        </div>
-                    </header>
-                </div>
-                    
-                    <div class="container-fluid">
-                        <div class="row mt-4 pl-3 pr-3">
-		                    <?php
-		                    $args = array(
-			                    'post_type' => 'product',
-			                    'posts_per_page' => 3,
-		                    );
-		
-		                    $loop = new WP_Query( $args );
-		
-		                    while ( $loop->have_posts() ) : $loop->the_post();
-			                    global $product;
-			                    ?>
-                                <div class="col-sm-10 col-md-8 col-lg-4 offset-sm-1 offset-md-2 offset-lg-0 mt-4 mb-4">
-                                    <div class="card">
-                                        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-                                             data-mdb-ripple-color="light">
-                                            <img width="100%" height="280" class="w-100"
-                                                 src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
-                                            <div class="hover-overlay">
-                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </header>
+                    </div>
+
+                        <div class="container-fluid">
+                            <div class="row mt-4 pl-3 pr-3">
+                                <?php
+                                $args = array(
+                                    'post_type' => 'product',
+                                    'posts_per_page' => 3,
+                                );
+
+                                $loop = new WP_Query( $args );
+
+                                while ( $loop->have_posts() ) : $loop->the_post(); global $product;
+                                ?>
+                                    <div class="col-sm-10 col-md-8 col-lg-4 offset-sm-1 offset-md-2 offset-lg-0 mt-4 mb-4">
+                                        <div class="card">
+                                            <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                                 data-mdb-ripple-color="light">
+                                                <img width="100%" height="280" class="w-100"
+                                                     src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" />
+                                                <div class="hover-overlay">
+                                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-body py-3 px-3">
+                                                <h5 class="text-reset"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h5>
+                                                <p>
+                                                    <?php echo get_the_excerpt(); ?>
+                                                </p>
+                                            </div>
+
+                                            <div class="card-footer">
+                                                <a href="<?php echo get_the_permalink(); ?>" class="btn btn-sm btn-info btn-icon btn-cart pull-right">
+                                                    <i class="fa fa-eye"></i>
+                                                    <span>See Product</span>
+                                                </a>
                                             </div>
                                         </div>
-                                        
-                                        <div class="card-body py-3 px-3">
-                                            <h5 class="text-reset"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h5>
-                                            <p>
-                                                <?php echo get_the_excerpt(); ?>
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="card-footer">
-                                            <a href="<?php echo get_the_permalink(); ?>" class="btn btn-sm btn-info btn-icon btn-cart pull-right">
-                                                <i class="fa fa-eye"></i>
-                                                <span>See Product</span>
-                                            </a>
-                                        </div>
                                     </div>
-                                </div>
-		                    <?php
-		                    endwhile;
-		                    wp_reset_query();
-		                    ?>
+                                <?php  endwhile; wp_reset_query(); ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            <?php endif; ?>
         </div>
     </div>
 </div>

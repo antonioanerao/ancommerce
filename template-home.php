@@ -96,6 +96,14 @@
                                 <p class="lead mb-0">
                                     <?php echo get_theme_mod('set_block_01_description', 'My cool block title description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quisquam unde voluptatibus? Pariatur, quis, temporibus! Ad animi aperiam aspernatur fuga odio quam repellendus. '); ?>
                                 </p>
+                                <?php if(get_theme_mod('set_block_01_link')) : ?>
+                                    <br>
+                                    <a href="<?php echo get_theme_mod('set_block_01_link'); ?>">
+                                        <button type="button" class="btn btn-info">
+                                            Mais Detalhes
+                                        </button>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endif; ?>
@@ -110,6 +118,14 @@
                                 <p class="lead mb-0">
 	                                <?php echo get_theme_mod('set_block_02_description', 'My cool block 02 title description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quisquam unde voluptatibus? Pariatur, quis, temporibus! Ad animi aperiam aspernatur fuga odio quam repellendus. '); ?>
                                 </p>
+                                <?php if(get_theme_mod('set_block_02_link')) : ?>
+                                    <br>
+                                    <a href="<?php echo get_theme_mod('set_block_02_link'); ?>">
+                                        <button type="button" class="btn btn-info">
+                                            Mais Detalhes
+                                        </button>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endif; ?>
@@ -124,6 +140,14 @@
                                 <p class="lead mb-0">
 					                <?php echo get_theme_mod('set_block_03_description', 'My cool block title description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt quisquam unde voluptatibus? Pariatur, quis, temporibus! Ad animi aperiam aspernatur fuga odio quam repellendus. '); ?>
                                 </p>
+                                <?php if(get_theme_mod('set_block_03_link')) : ?>
+                                    <br>
+                                    <a href="<?php echo get_theme_mod('set_block_03_link'); ?>">
+                                        <button type="button" class="btn btn-info">
+                                            Mais Detalhes
+                                        </button>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
 	                <?php endif; ?>

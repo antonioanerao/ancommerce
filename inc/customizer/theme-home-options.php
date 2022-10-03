@@ -144,6 +144,26 @@ $wp_customize->add_control(
     )
 );
 
+// Link To Post/Product
+$wp_customize->add_setting(
+    'set_block_01_link', array(
+        'type'					=> 'theme_mod',
+        'default'				=> '',
+        'sanitize_callback'		=> 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'set_block_01_link', array(
+        'label'				=> __( 'Post/Product Link', 'ancommerce' ),
+        'description'		=> __( 'Add your blog/product url here', 'ancommerce' ),
+        'section'			=> 'sec_block_01',
+        'type'				=> 'text',
+        'input_attrs' => array(
+            'placeholder' => __('EX: https://domain.com/post'),
+        )
+    )
+);
+
 // Block 02
 $wp_customize->add_section(
     'sec_block_02', array(
@@ -206,6 +226,26 @@ $wp_customize->add_control(
     )
 );
 
+// Link To Post/Product
+$wp_customize->add_setting(
+    'set_block_02_link', array(
+        'type'					=> 'theme_mod',
+        'default'				=> '',
+        'sanitize_callback'		=> 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'set_block_02_link', array(
+        'label'				=> __( 'Post/Product Link', 'ancommerce' ),
+        'description'		=> __( 'Add your blog/product url here', 'ancommerce' ),
+        'section'			=> 'sec_block_02',
+        'type'				=> 'text',
+        'input_attrs' => array(
+            'placeholder' => __('EX: https://domain.com/post'),
+        )
+    )
+);
+
 // Block 03
 $wp_customize->add_section(
     'sec_block_03', array(
@@ -264,6 +304,26 @@ $wp_customize->add_control(
         'type'				=> 'text',
         'input_attrs' => array(
             'placeholder' => __('EX: https://domain.com/img/image.jpg'),
+        )
+    )
+);
+
+// Link To Post/Product
+$wp_customize->add_setting(
+    'set_block_03_link', array(
+        'type'					=> 'theme_mod',
+        'default'				=> '',
+        'sanitize_callback'		=> 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'set_block_03_link', array(
+        'label'				=> __( 'Post/Product Link', 'ancommerce' ),
+        'description'		=> __( 'Add your blog/product url here', 'ancommerce' ),
+        'section'			=> 'sec_block_03',
+        'type'				=> 'text',
+        'input_attrs' => array(
+            'placeholder' => __('EX: https://domain.com/post'),
         )
     )
 );
